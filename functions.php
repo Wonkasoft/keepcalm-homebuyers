@@ -45,6 +45,7 @@ if ( ! function_exists( 'keepcalm_homebuyers_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'keepcalm-homebuyers' ),
+			'submenu-1' => esc_html__( 'Submenu_Top', 'keepcalm-homebuyers' ),
 		) );
 
 		/*
@@ -120,7 +121,19 @@ add_action( 'widgets_init', 'keepcalm_homebuyers_widgets_init' );
  * Enqueue scripts and styles.
  */
 function keepcalm_homebuyers_scripts() {
+	/**
+	 * For enqueues of stylesheets
+	 */
+	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
+
+	wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+
 	wp_enqueue_style( 'keepcalm-homebuyers-style', get_stylesheet_uri() );
+
+	/**
+	 * For enqueues of scripts
+	 */
+	wp_enqueue_script( 'bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jQuery' ), 'all', true );
 
 	wp_enqueue_script( 'keepcalm-homebuyers-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
