@@ -37,22 +37,22 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'description'	=> __( 'Theme Settings', 'keepcalm-homebuyers' )
 		 ) );
 	/**
-	 * Putting in header image
-	 * @since 1.0.0 [Adding in header image]
+	 * Putting in Main Image
+	 * @since 1.0.0 [Adding in Main Image]
 	 */
-	$wp_customize->add_section( 'header_section', array(
+	$wp_customize->add_section( 'main_section', array(
 		'capability'	=> 'edit_theme_options',
 		'theme_support'	=> '',
 		'priority'		=> 11,
-		'title'			=> __( 'Header Section', 'keepcalm-homebuyers' ),
-		'description'	=> __( 'Header Section Options', ' keepcalm-homebuyers' ),
+		'title'			=> __( 'Main Section', 'keepcalm-homebuyers' ),
+		'description'	=> __( 'Main Section Options', ' keepcalm-homebuyers' ),
 		'panel'			=> 'ft_theme_options' 
 		) );
 	/**
 	 * Headaing image setting
-	 * @since 1.0.0 [Header image setings]
+	 * @since 1.0.0 [Main Image setings]
 	 */
-	$wp_customize->add_setting( 'header_image', array(
+	$wp_customize->add_setting( 'main_image', array(
 		'defualt'	=> '',
 		'transport'	=> 'refresh'
 		) );
@@ -62,15 +62,59 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'header_image', 
+		'main_image', 
 		array(
-			'label' 		=> __( 'Main Header Image', 'keepcalm-homebuyers' ), 
-			'section'		=> 'header_section', 
-			'setting'		=> 'header_image', 
+			'label' 		=> __( 'Main Image', 'keepcalm-homebuyers' ), 
+			'section'		=> 'main_section', 
+			'setting'		=> 'main_image', 
 			'type'			=> 'image',
-			'description'	=> __( 'Chose Header Image', 'keepcalm-homebuyers' )
+			'description'	=> __( 'Chose Main Image', 'keepcalm-homebuyers' )
 		)
 	) );
+
+	/**
+	 * Grid Section Images
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_section( 'grid_section', array(
+		'capability'	=> 'edit_theme_options',
+		'theme_support'	=> '',
+		'priority'		=> 13,
+		'title'			=> __( 'Grid Section', 'keepcalm-homebuyers' ),
+		'description'	=> __( 'Grid Section Options', ' keepcalm-homebuyers' ),
+		'panel'			=> 'ft_theme_options' 
+		) );
+
+	/**
+	 * Loop for grid section images
+	 * @since 1.0.0 [loop for grid images]
+	 */
+	for ($i = 1; $i < 7; $i++) {
+		
+		/**
+		 * Grid Section Image settings
+		 * @since 1.0.0 
+		 */
+		$wp_customize->add_setting( 'grid_image_' . $i, array(
+			'default'	=> '',
+			'transport'	=> 'refresh'
+		) );
+		/**
+		 * Grid Section Image Controller
+		 * @since 1.0.0
+		 */
+		$wp_customize->add_control( new WP_Customize_Image_Control(
+			$wp_customize,
+			'grid_image_' . $i, 
+			array(
+				'label' 		=> __( 'Grid Image ', 'keepcalm-homebuyers' ), 
+				'section'		=> 'grid_section', 
+				'setting'		=> 'grid_image_' . $i, 
+				'type'			=> 'image',
+				'description'	=> __( 'Chose Grid Image ' . $i, 'keepcalm-homebuyers' )
+			)
+		) );
+	}
 	/**
 	 * Footer Section
 	 * @since 1.0.0 [adding footer section]
@@ -106,7 +150,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'description'	=> __( 'Input Copyright Information', 'keepcalm-homebuyers' )
 		)
 	) );
-
+	
 }
 add_action( 'customize_register', 'keepcalm_homebuyers_customize_register' );
 
