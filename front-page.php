@@ -60,7 +60,9 @@ get_header();
 	<h3 class="section-title">Contact Us</h3>
 	<p class="">Please fill out this form and we will be in contact with you. Thanks for your interest in us!</p>
 </section> <!-- .container-fluid content-section -->
-
+<section class="container-fluid content-section ">
+	
+</section>
 
 <?php
 get_footer();
