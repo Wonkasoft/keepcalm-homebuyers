@@ -1,4 +1,4 @@
-yea <?php
+<?php
 /**
  * Keep Calm Home Buyers Theme Customizer
  *

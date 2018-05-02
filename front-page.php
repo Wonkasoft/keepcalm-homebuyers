@@ -37,32 +37,30 @@ get_header();
 			$grid_image_id = attachment_url_to_postid( $grid_image );
 			$grid_image_alt = ( !get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true ) ) ? 'grid image ' . $i : get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true );
 			// This is getting the image / url $feature1 = get_theme_mod('feature_image_1'); // This is getting the post id $feature1_id = attachment_url_to_postid($feature1); // This is getting the alt text from the image that is set in the media area $image1_alt = get_post_meta( $feature1_id, '_wp_attachment_image_alt', true );
-		if ( $i == 1 || $i == 5 ) :
-		?>
-		<div class="col col-md-6">
-			<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
-		</div> <!-- .col -->
-		
-		<?php
-		else :
-			?>
-			<div class="col col-md-3">
-				<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
-			</div> <!-- .col -->
-			
-			<?php
-	    endif;
+			if ( $i == 1 || $i == 5 ) :
+				?>
+				<div class="col col-md-6">
+					<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
+				</div> <!-- .col -->
+
+				<?php
+			else :
+				?>
+				<div class="col col-md-3">
+					<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
+				</div> <!-- .col -->
+
+				<?php
+			endif;
 		endfor;
 		?>
 	</div> <!-- .row -->
 </section> <!-- .container-fluid content-section -->
+<?php if ( get_theme_mod( 'contact' ) != '' ) :
+$contact = get_theme_mod( 'contact' ); ?>
 <section class="container-fluid content-section">
-	<h3 class="section-title">Contact Us</h3>
-	<p class="">Please fill out this form and we will be in contact with you. Thanks for your interest in us!</p>
+	<?php echo do_shortcode( $contact, true ); ?>
 </section> <!-- .container-fluid content-section -->
-<section class="container-fluid content-section ">
-	
-</section>
-
-<?php
+<?php 
+endif; 
 get_footer();
