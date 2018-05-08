@@ -40,11 +40,13 @@
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
 						endif;
+
 				$keepcalm_homebuyers_description = get_bloginfo( 'description', 'display' );
 				if ( $keepcalm_homebuyers_description || is_customize_preview() ) :
 					?>
 					<p class="site-description"><?php echo $keepcalm_homebuyers_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
+				</div> <!-- .custom-logo -->
 			</div> <!-- .col-5 -->
 			<div class="col-7">
 				<div class="row">
