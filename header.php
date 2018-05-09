@@ -53,6 +53,7 @@
 					<div class="col">
 						<nav class="account-row">
 							<?php
+							get_search_form();
 							wp_nav_menu( array(
 								'theme_location' => 'submenu-1',
 								'menu_id'        => 'sub-menu-top',
