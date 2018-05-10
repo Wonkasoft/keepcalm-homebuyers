@@ -37,6 +37,17 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</div> <!-- .col -->
+	<div class="col">
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="social-media-menu" aria-expanded="false"><?php esc_html_e( 'Footer_Menu_1', 'keepcalm-homebuyers' ); ?></button>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'social-media-menu',
+				'menu_id'        => 'social-media',
+			) );
+			?>
+		</nav><!-- #site-navigation -->
+	</div>
 	<div class="site-info">
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'keepcalm-homebuyers' ) ); ?>">
 			<?php

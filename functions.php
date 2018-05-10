@@ -48,6 +48,8 @@ if ( ! function_exists( 'keepcalm_homebuyers_setup' ) ) :
 			'submenu-1' => esc_html__( 'Submenu_Top', 'keepcalm-homebuyers' ),
 			'footer-menu1' => esc_html__( 'Footer_Menu_1', 'keepcalm-homebuyers' ),
 			'footer-menu2' => esc_html__( 'Foot_Menu_2', 'keepcalm-homebuyers' ),
+			'social-media-menu' => esc_html__( 'Social_Media_Menu', 'keepcalm-homebuyers' ),
+
 		) );
 
 		/*
