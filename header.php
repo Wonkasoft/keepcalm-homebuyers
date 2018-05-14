@@ -45,6 +45,7 @@
 					?>
 					<p class="site-description"><?php echo $keepcalm_homebuyers_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
+			</div> <!-- .custom-logo -->
 			</div> <!-- .col-5 -->
 			<div class="col-7">
 				<div class="row">
