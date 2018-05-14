@@ -40,6 +40,7 @@
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
 						endif;
+
 				$keepcalm_homebuyers_description = get_bloginfo( 'description', 'display' );
 				if ( $keepcalm_homebuyers_description || is_customize_preview() ) :
 					?>
@@ -52,6 +53,7 @@
 					<div class="col">
 						<nav class="account-row">
 							<?php
+							get_search_form();
 							wp_nav_menu( array(
 								'theme_location' => 'submenu-1',
 								'menu_id'        => 'sub-menu-top',

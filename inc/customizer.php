@@ -1,4 +1,4 @@
-yea <?php
+<?php
 /**
  * Keep Calm Home Buyers Theme Customizer
  *
@@ -89,7 +89,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 * Loop for grid section images
 	 * @since 1.0.0 [loop for grid images]
 	 */
-	for ($i = 1; $i < 7; $i++) {
+	for ($i = 1; $i < 7; $i++) :
 		
 		/**
 		 * Grid Section Image settings
@@ -114,7 +114,46 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 				'description'	=> __( 'Chose Grid Image ' . $i, 'keepcalm-homebuyers' )
 			)
 		) );
-	}
+	endfor;
+	/**
+	 * Contact Section
+	 * @since 1.0.0 [Contact Section]
+	 */
+	$wp_customize->add_section( 'contact_section', array(
+		'capability'	=> 'edit_theme_options',
+		'theme_support'	=> '',
+		'priority'		=> 14,
+		'title'			=> __( 'Contact Section', 'keepcalm-homebuyers' ),
+		'description'	=> __( 'Contact Section Options', ' keepcalm-homebuyers' ),
+		'panel'			=> 'ft_theme_options' 
+		) );
+
+	/**
+	 * Contact settings
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'contact', array(
+		'default'	=> '',
+		'transport'	=> 'refresh'
+	) );
+
+	/**
+	 * Contact input 
+	 * @since 1.0.0 [Contact input]
+	 */
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'contact',
+		array(
+		    'label' 		=> __( 'Contact Input', 'keepcalm-homebuyers' ), 
+			'section'		=> 'contact_section', 
+			'setting'		=> 'contact', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input Contact Information', 'keepcalm-homebuyers' )
+		)
+	) );
+
+
 	/**
 	 * Footer Section
 	 * @since 1.0.0 [adding footer section]
@@ -150,8 +189,76 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'description'	=> __( 'Input Copyright Information', 'keepcalm-homebuyers' )
 		)
 	) );
-	
+
+	/**
+	 * Social Section
+	 * @since  1.0.0 [adding social settings]
+	 */
+	$wp_customize->add_section( 'social_section', array(
+		'capability'     => 'edit_theme_options',
+		'theme_support'	 => '',
+		'priority' 		 => 16,
+		'title' 		 => __( 'Social Section', 'keepcalm-homebuyers'),
+		'description' 	 => __( 'Input Social Links', 'keepcalm-homebuyers'),
+		'panel'			 => 'ft_theme_options'
+	) );
+
+	/**
+	 * Social Settings
+	 * @since 1.0.0 [social settings]
+	 */
+	$wp_customize->add_setting( 'facebook', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+	$wp_customize->add_setting( 'twitter', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+	$wp_customize->add_setting( 'instagram', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+
+	/**
+	 * Social Control
+	 * @since  1.0.0 [control for social links]
+	 */
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'facebook',
+		array(
+		    'label' 		=> __( 'Facebook', 'keepcalm-homebuyers' ), 
+			'section'		=> 'social_section', 
+			'setting'		=> 'facebook', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input Facebook Link', 'keepcalm-homebuyers' )
+		)
+	) );
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'twitter',
+		array(
+		    'label' 		=> __( 'Twitter', 'keepcalm-homebuyers' ), 
+			'section'		=> 'social_section', 
+			'setting'		=> 'twitter', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input Twitter Link', 'keepcalm-homebuyers' )
+		)
+	) );
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'instagram',
+		array(
+		    'label' 		=> __( 'Instagram', 'keepcalm-homebuyers' ), 
+			'section'		=> 'social_section', 
+			'setting'		=> 'instagraml', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input instagram Link', 'keepcalm-homebuyers' )
+		)
+	) );
 }
+	
 add_action( 'customize_register', 'keepcalm_homebuyers_customize_register' );
 
 /**
