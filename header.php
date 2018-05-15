@@ -28,52 +28,58 @@
 			<div class="row">
 				<div class="col-5">
 					<div class="custom-logo">
-						<?php the_custom_logo(); ?>
-					</div> <!-- .custom-logo -->
-					<?php
-					if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
-					else :
-						?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-					$keepcalm_homebuyers_description = get_bloginfo( 'description', 'display' );
-					if ( $keepcalm_homebuyers_description || is_customize_preview() ) :
-						?>
-						<p class="site-description"><?php echo $keepcalm_homebuyers_description; /* WPCS: xss ok. */ ?></p>
-					<?php endif; ?>
-				</div> <!-- .col-5 -->
-				<div class="col-7">
-					<div class="row">
-						<div class="col">
-							<nav class="account-row">
-								<?php
-								wp_nav_menu( array(
-									'theme_location' => 'submenu-1',
-									'menu_id'        => 'sub-menu-top',
-								) );
-								?>
-							</nav> <!-- .account-row -->
-						</div> <!-- .col -->
-					</div> <!-- .row -->
-					<div class="row">
-						<div class="col">
-							<nav id="site-navigation" class="main-navigation">
-								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'keepcalm-homebuyers' ); ?></button>
-								<?php
-								wp_nav_menu( array(
-									'theme_location' => 'menu-1',
-									'menu_id'        => 'primary-menu',
-								) );
-								?>
-							</nav><!-- #site-navigation -->
-						</div> <!-- .col -->
-					</div> <!-- .row -->
-				</div><!-- .col-7 -->
-			</div><!-- .row -->
-		</header><!-- #masthead -->
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						$custom_logo_id_image = wp_get_attachment_image_src( $custom_logo_id, 'full');
 
-		<div id="content" class="site-content">
+						if ( ! empty( $custom_logo_id ) ): ?>
+							<span class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $custom_logo_id_image[0] ); ?>" alt="<?php bloginfo( 'name' ); ?>"/></a></span> 
+						<?php
+						else :
+							?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php
+						endif;
+
+				$keepcalm_homebuyers_description = get_bloginfo( 'description', 'display' );
+				if ( $keepcalm_homebuyers_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $keepcalm_homebuyers_description; /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+			</div> <!-- .custom-logo -->
+			</div> <!-- .col-5 -->
+			<div class="col-7">
+				<div class="row">
+					<div class="col">
+						<nav class="account-row">
+							<ul id="sub-menu-icons" class="inline">
+								<li class="list-inline-item">
+								<?php
+								get_search_form();
+								?>	
+								</li>
+								<li class="list-inline-item">
+									<a href="/my-account"><i class="fa fa-user"></i></a>
+								</li>
+							</ul> <!-- /sub-menu list -->
+						</nav> <!-- .account-row -->
+					</div> <!-- .col -->
+				</div> <!-- .row -->
+				<div class="row">
+					<div class="col">
+						<nav id="site-navigation" class="main-navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'keepcalm-homebuyers' ); ?></button>
+							<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							) );
+							?>
+						</nav><!-- #site-navigation -->
+					</div> <!-- .col -->
+				</div> <!-- .row -->
+			</div><!-- .col-7 -->
+		</div><!-- .row -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
