@@ -9,7 +9,7 @@
 
 	$featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_uri() . '/assets/img/default-subpage-header-image.jpg' : get_the_post_thumbnail_url(); 
 ?>
-<div class="row" style="background: url('<?php echo $featured_image; ?>')">
+<div class="row" style="background: url('<?php echo $featured_image; ?>') no-repeat;background-position: center center;background-size: cover;">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

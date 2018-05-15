@@ -5,66 +5,95 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+ * @since  1.0.0 [<init>]
  * @package Keep_Calm_Home_Buyers
  */
 
 ?>
-
 </div><!-- #content -->
+<footer id="colophon" class="site-footer container-fluid">
+	<div class="row text-center">
+		<div class="col"></div>
+		<div class="col">
+			<h4 class="font-upper">Resources</h4>
+		</div>
+		<div class="col">
+			<h4 class="font-upper">Social Presence</h4>
+		</div>
+	</div> <!-- .row -->
+	<div class="row">
+		<div class="col">
+			<?php 
+			$footer_logo =  ( ! get_theme_mod( 'footer_logo' ) ) ? '' : get_theme_mod( 'footer_logo' );
+			$copyright = ( ! get_theme_mod( 'copyright' ) ) ? '' : get_theme_mod( 'copyright' );
+			if ( $footer_logo == '' ) :
 
-<footer id="colophon" class="site-footer">
-	<div class="col-3">
-		<?php the_custom_logo(); ?>
-	</div> <!-- .col-3 -->
-	<div class="col">
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="footer-menu-1" aria-expanded="false"><?php esc_html_e( 'Footer_Menu_1', 'keepcalm-homebuyers' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'footer-menu1',
-				'menu_id'        => 'footer-1',
-			) );
+			else :
 			?>
-		</nav><!-- #site-navigation -->
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="footer-menu-2" aria-expanded="false"><?php esc_html_e( 'Footer_Menu_2', 'keepcalm-homebuyers' ); ?></button>
+			<img src="<?php echo $footer_logo; ?>" />
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'footer-menu2',
-				'menu_id'        => 'footer-2',
-			) );
+			endif;
 			?>
-		</nav><!-- #site-navigation -->
-	</div> <!-- .col -->
-	<div class="col">
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="social-media-menu" aria-expanded="false"><?php esc_html_e( 'Footer_Menu_1', 'keepcalm-homebuyers' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'social-media-menu',
-				'menu_id'        => 'social-media',
-			) );
+			<!-- <div class="site-info"> -->
+				&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+			<!-- </div>.site-info -->
+		</div> <!-- .col-3 -->
+		<div class="col">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer-menu1',
+					'menu_id'        => 'footer-1',
+				) );
+				?>
+		</div> <!-- .col -->
+		<div class="col-3">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer-menu2',
+					'menu_id'        => 'footer-2',
+				) );
+				?>
+		</div> <!-- .col -->
+		<div class="col-3">
+			<?php 
+			$facebook = ( ! get_theme_mod( 'facebook' ) ) ? '' : get_theme_mod( 'facebook' );
+			$twitter = ( ! get_theme_mod( 'twitter' ) ) ? '' : get_theme_mod( 'twitter' );
+			$instagram = ( ! get_theme_mod( 'instagram' ) ) ? '' : get_theme_mod( 'instagram' );
+			if ( $facebook == '' ) :
+
+			else :
+				?>
+				<span class="circle-icon"><a href="<?php echo $facebook; ?>"><i class="fa fa-facebook"></i></a></span>
+				<?php
+			endif;
+
+			if ( $twitter == '' ) :
+
+			else :
+				?>
+				<span class="circle-icon"><a href="<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></span>
+
+				<?php
+			endif;
+
+			if ( $instagram == '' ) :
+
+			else :
+				?>
+				<span class="circle-icon"><a href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a></span>
+				<?php
+			endif;
+				$design_credits = ( ! get_theme_mod( 'design_credits' ) )	? '' : get_theme_mod( 'design_credits' );
+				if ( $design_credits == '' ) :
+
+				else :
+					echo '<p>'.$design_credits.'</p>';
+				endif;
 			?>
-		</nav><!-- #site-navigation -->
-	</div>
-	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'keepcalm-homebuyers' ) ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'keepcalm-homebuyers' ), 'WordPress' );
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf( esc_html__( 'Theme: %1$s by %2$s.', 'keepcalm-homebuyers' ), 'keepcalm-homebuyers', '<a href="https://wonkasoft.com">Wonkasoft</a>' );
-		?>
-	</div><!-- .site-info -->
+		</div> <!-- .col -->
+	</div> <!-- .row -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
-
 </body>
 </html>

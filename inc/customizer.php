@@ -166,8 +166,32 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'description'	=> __( 'Footer Section Options', 'keepcalm-homebuyers' ),
 		'panel'			=> 'ft_theme_options'
 	) );
+
+		/**
+	 * Footer Logo settings
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'footer_logo', array(
+		'default'	=> '',
+		'transport'	=> 'refresh'
+	) );
 	/**
-	 * Footer settings
+	 * Footer Logo Controller
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize,
+		'footer_logo',
+		array(
+		  'label' 		=> __( 'Footer Logo', 'keepcalm-homebuyers' ), 
+			'section'		=> 'footer_section', 
+			'setting'		=> 'footer_logo', 
+			'image'			=> 'image',
+			'description'	=> __( 'Select a Logo recommended size 300px x 150px ', 'keepcalm-homebuyers' )
+		)
+	) );
+	/**
+	 * Footer copyright settings
 	 * @since 1.0.0
 	 */
 	$wp_customize->add_setting( 'copyright', array(
@@ -175,7 +199,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'transport'	=> 'refresh'
 	) );
 	/**
-	 * Footer Controller
+	 * Footer copyright Controller
 	 * @since 1.0.0
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -187,6 +211,30 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'setting'		=> 'copyright', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input Copyright Information', 'keepcalm-homebuyers' )
+		)
+	) );
+
+		/**
+	 * Footer design credits settings
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'design_credits', array(
+		'default'	=> '',
+		'transport'	=> 'refresh'
+	) );
+	/**
+	 * Footer design credits Controller
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'design_credits',
+		array(
+		    'label' 		=> __( 'Design credit', 'keepcalm-homebuyers' ), 
+			'section'		=> 'footer_section', 
+			'setting'		=> 'design_credits', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input design credits text', 'keepcalm-homebuyers' )
 		)
 	) );
 
@@ -211,14 +259,6 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'refresh'	=> 'refresh'
 	) );
-	$wp_customize->add_setting( 'twitter', array(
-		'default'	=> '',
-		'refresh'	=> 'refresh'
-	) );
-	$wp_customize->add_setting( 'instagram', array(
-		'default'	=> '',
-		'refresh'	=> 'refresh'
-	) );
 
 	/**
 	 * Social Control
@@ -235,6 +275,12 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'description'	=> __( 'Input Facebook Link', 'keepcalm-homebuyers' )
 		)
 	) );
+	
+	$wp_customize->add_setting( 'twitter', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+	
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
 		'twitter',
@@ -246,6 +292,12 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'description'	=> __( 'Input Twitter Link', 'keepcalm-homebuyers' )
 		)
 	) );
+
+	$wp_customize->add_setting( 'instagram', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
 		'instagram',
