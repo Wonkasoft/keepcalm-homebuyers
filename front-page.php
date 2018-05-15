@@ -26,10 +26,10 @@ get_header();
 	hassle-free sale of your home. Let us help you!</p>
 </section> <!-- .container-fluid contemt-section -->
 <section class="container-fluid content-section">
-	<h1 class="section-title"> Keep calm Testimonials</h1>
+	<h1 class="section-title">Keep calm Testimonials</h1>
 </section> <!-- .container-fluid content-section -->
-<section class="container-fluid content-section">
-	<div class="row">
+<section class="content-section">
+	<div class="row no-gutters">
 		<?php 
 		for ($i = 1; $i < 7; $i++) :
 			$grid_image = ( !get_theme_mod( 'grid_image_' . $i ) ) ? get_template_directory_uri() . '/assets/img/default-grid-image-' . $i . '.jpg': get_theme_mod( 'grid_image_' . $i );
@@ -37,15 +37,19 @@ get_header();
 			$grid_image_alt = ( !get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true ) ) ? 'grid image ' . $i : get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true );
 			if ( $i == 1 || $i == 5 ) :
 				?>
-				<div class="col col-md-6">
-					<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
+				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);">
+					<div>
+						<span><?php echo $grid_image_alt; ?></span>
+					</div>
 				</div> <!-- .col -->
 
 				<?php
 			else :
 				?>
-				<div class="col col-md-3">
-					<img src="<?php echo $grid_image; ?>" alt="<?php echo $grid_image_alt; ?>">
+				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);">
+					<div>
+						<span><?php echo $grid_image_alt; ?></span>
+					</div>
 				</div> <!-- .col -->
 				<?php
 			endif;
