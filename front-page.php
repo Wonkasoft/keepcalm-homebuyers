@@ -37,7 +37,7 @@ get_header();
 			$grid_image_alt = ( !get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true ) ) ? 'grid image ' . $i : get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true );
 			if ( $i == 1 || $i == 5 ) :
 				?>
-				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);">
+				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
 						<span><?php echo $grid_image_alt; ?></span>
 					</div>
@@ -46,7 +46,7 @@ get_header();
 				<?php
 			else :
 				?>
-				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);">
+				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
 						<span><?php echo $grid_image_alt; ?></span>
 					</div>
