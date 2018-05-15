@@ -3,18 +3,18 @@
  * Template part for displaying page content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @since  1.0.0 [<init>]
  * @package Keep_Calm_Home_Buyers
  */
 
+	$featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_uri() . '/assets/img/default-subpage-header-image.jpg' : get_the_post_thumbnail_url(); 
 ?>
-
+<div class="row" style="background: url('<?php echo $featured_image; ?>')">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php keepcalm_homebuyers_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -50,3 +50,4 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+</div> <!-- /.row -->

@@ -50,7 +50,7 @@
 			</div> <!-- .col-5 -->
 			<div class="col-7">
 				<div class="row">
-					<div class="col">
+					<div class="col text-right">
 						<nav class="account-row">
 							<ul id="sub-menu-icons" class="inline">
 								<li class="list-inline-item">
