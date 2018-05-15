@@ -52,13 +52,16 @@
 				<div class="row">
 					<div class="col">
 						<nav class="account-row">
-							<?php
-							get_search_form();
-							wp_nav_menu( array(
-								'theme_location' => 'submenu-1',
-								'menu_id'        => 'sub-menu-top',
-							) );
-							?>
+							<ul id="sub-menu-icons" class="inline">
+								<li class="list-inline-item">
+								<?php
+								get_search_form();
+								?>	
+								</li>
+								<li class="list-inline-item">
+									<a href="/my-account"><i class="fa fa-user"></i></a>
+								</li>
+							</ul> <!-- /sub-menu list -->
 						</nav> <!-- .account-row -->
 					</div> <!-- .col -->
 				</div> <!-- .row -->

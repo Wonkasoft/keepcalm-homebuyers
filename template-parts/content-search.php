@@ -3,7 +3,7 @@
  * Template part for displaying results in search pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @since  1.0.0 [<init>]
  * @package Keep_Calm_Home_Buyers
  */
 

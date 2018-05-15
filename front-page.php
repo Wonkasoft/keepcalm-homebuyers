@@ -3,7 +3,7 @@
  * The template for displaying all single posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
+ * @since  1.0.0 [<init>]
  * @package Keep_Calm_Home_Buyers
  */
 
@@ -12,8 +12,6 @@ get_header();
 
 <section id="primary" class="container-fluid">
 	<main id="main" class="site-main">
-
-
 		<?php 
 		$main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() . '/assets/img/default-header-image.jpg': get_theme_mod( 'main_image' );
 		?>
