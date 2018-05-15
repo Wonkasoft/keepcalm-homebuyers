@@ -11,13 +11,14 @@ get_header();
 ?>
 
 <section id="primary" class="container-fluid">
-	<main id="main" class="site-main">
-
+	<main id="main" class="row site-main">
+		<div class="col">
 
 		<?php 
 		$main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() . '/assets/img/default-header-image.jpg': get_theme_mod( 'main_image' );
 		?>
 		<img src="<?php echo $main_image; ?>">
+	</div> <!-- /col -->
 	</main><!-- #main -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
