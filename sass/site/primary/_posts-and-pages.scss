@@ -94,10 +94,46 @@
 	min-height: 425px;
 }
 
-.section-title {
+.arrow-message {
+	position: relative;
+	color: #fff;
+	background: rgba( 0, 0, 0, .5 );
+	border: 2px solid #fff;
+	border-right-color: transparent;
+	padding: 15px;
+	font-family: $font__opsani;
+	font-size: 2.4rem;
+	line-height: .95;
+}
+
+.top-row-message {
+	font-size: 1.7rem;
+}
+
+.bottom-row-message {
+	display: block;
+	clear: both;
+}
+
+.bold-message {
+	text-transform: uppercase;
+	font-family: $font__opsanbold;
+	font-size: 2.5rem;
+}
+
+.calm-message {
+	font-family: $font__main;
+	font-size: 2.5rem;
+}
+
+.upper-message {
+	text-transform: uppercase;
+}
+
+.problem-section-title {
 	color: #000;
 	text-transform: uppercase;
-	font-family: 'Open Sans Bold Italics'
+	font-family: $font__opsanboldi;
 }
 
 .hentry {
