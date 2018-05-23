@@ -26,7 +26,7 @@
 
 		<header id="masthead" class="container-fluid site-header">
 			<div class="row">
-				<div class="col-5">
+				<div class="col-3">
 					<div class="custom-logo">
 						<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -48,7 +48,7 @@
 				<?php endif; ?>
 			</div> <!-- .custom-logo -->
 			</div> <!-- .col-5 -->
-			<div class="col-7">
+			<div class="col-8">
 				<div class="row">
 					<div class="col text-right">
 						<nav class="account-row">
@@ -65,8 +65,8 @@
 						</nav> <!-- .account-row -->
 					</div> <!-- .col -->
 				</div> <!-- .row -->
-				<div class="row">
-					<div class="col">
+				<div class="row nav-row">
+					<div class="col text-right">
 						<nav id="site-navigation" class="main-navigation">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'keepcalm-homebuyers' ); ?></button>
 							<?php

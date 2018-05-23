@@ -10,5 +10,5 @@
 <form action="<?php get_site_url(); ?>" method="get">
     <label for="search" class="sr-only">Search</label>
     <input type="text" name="s" id="s" value="<?php the_search_query(); ?>" />
-	<i class="fa fa-search"></i>
+	<i id="search-btn" class="fa fa-search"></i>
 </form>

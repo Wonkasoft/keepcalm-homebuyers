@@ -11,22 +11,38 @@ get_header();
 
 $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() . '/assets/img/default-header-image.jpg': get_theme_mod( 'main_image' );
 ?>
-
-<section id="primary" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;">
+<section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
+<section id="primary" class="container-fluid">
 	<main id="main" class="site-main">
-		<span class="arrow-message">
-			<span class="bold-message">Keep</span><span class="upper-message">Calm we</span>
-			we can help buy your house <span class="upper-message">fast</span>
+		
+		<h1 class="arrow-message">
+			<span class="top-row-message"><span class="bold-message">Keep</span><span class="upper-message calm-message"> Calm</span>
+			we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
+		</h1> <!-- .arrow-message -->
+		
 		</main><!-- #main -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
-	<h1 class="section-title">Do you have a problem house?</h1>
-	<p class=""><span>keep calm home buyers</span>can purchase your home fast to help in situations such 
-		back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
-	hassle-free sale of your home. Let us help you!</p>
+	<div class="row">
+		<div class="col text-center">
+			<h1 class="problem-section-title">Do you have a problem house?</h1>
+		</div> <!-- /col -->
+	</div> <!-- /row -->
+	<div class="row justify-content-center">
+		<div class="col-6 text-center">
+			<p class=""><span>keep calm home buyers</span>can purchase your home fast to help in situations such 
+				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
+				hassle-free sale of your home. Let us help you!
+			</p>
+		</div> <!-- /col -->
+	</div> <!-- /row -->
 </section> <!-- .container-fluid contemt-section -->
-<section class="container-fluid content-section">
-	<h1 class="section-title">Keep calm Testimonials</h1>
+<section id="testimonials" class="container-fluid content-section">
+	<div class="row justify-content-center">
+		<div class="col-6 text-center">
+			<h1 class="section-title">Keep calm Testimonials</h1>
+		</div> <!-- /col -->
+	</div> <!-- /row -->
 </section> <!-- .container-fluid content-section -->
 <section class="content-section">
 	<div class="row no-gutters">
@@ -39,7 +55,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 				?>
 				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
-						<span><?php echo $grid_image_alt; ?></span>
+						<h2><?php echo $grid_image_alt; ?></h2>
 					</div>
 				</div> <!-- .col -->
 
@@ -48,7 +64,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 				?>
 				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
-						<span><?php echo $grid_image_alt; ?></span>
+						<h2><?php echo $grid_image_alt; ?></h2>
 					</div>
 				</div> <!-- .col -->
 				<?php
