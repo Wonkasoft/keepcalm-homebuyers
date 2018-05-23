@@ -7,22 +7,98 @@
  */
 
 #masthead {
-	height: 125px;
+	position: relative;
+	height: 140px;
 	background: rgba(0, 0, 0, .5);
+	z-index: 100;
+
+	> .row {
+		margin-top: 15px;
+	}
+
+	a, i {
+		color: #fff;
+	}
 	
+	.custom-logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.site-logo {
+			max-width: 325px;
+		}
+
+		a {
+			display: inline-block;
+		}
+	}
+
 	.account-row {
 		margin: 8px 0;
-	}
-}
 
-#primary {
-	background-size: cover;
-	background-repeat: no-repeat; 
+		#sub-menu-icons {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			form {
+				overflow: hidden;
+
+				input {
+					position: relative;
+					left: 100%;
+				}
+			}
+		}
+	}
+
+	.nav-row {
+		min-height: 3rem;
+
+		> .col {
+			align-self: flex-end;
+		}
+	}
+
+	#site-navigation {
+		max-width: 60%;
+		float: right;
+	}
+
+	#primary-menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-transform: uppercase;
+	}
 }
 
 /**
  * End Header
  */
+
+#backdrop {
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 70%;
+}
+
+#primary {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 425px;
+}
+
+.section-title {
+	color: #000;
+	text-transform: uppercase;
+	font-family: 'Open Sans Bold Italics'
+}
 
 .hentry {
 	margin: 0 0 1.5em;
@@ -44,5 +120,62 @@
 }
 
 .masonary-grid-img {
+	display: flex;
+	align-items: flex-end;
 	height: 375px;
+
+	> div {
+		background: linear-gradient(-213deg, rgba( 0, 0, 0, .4 ), rgba( 0, 0, 0, .8 ) );
+		margin-bottom: 35px;
+		margin-left: 45px;
+		text-transform: uppercase;
+		color: #fff;
+
+		> h2 {
+			padding: 8px;
+			margin: 0;
+		}
+	}
+}
+
+#testimonials {
+
+}
+
+#colophon {
+	background: #0b98ce;
+	color: #fff;
+	@include prefix( box-shadow, 0 1px 6px 0 inset rgba( 0, 0, 0, .5 ), webkit moz o );
+
+	a {
+		color: #fff;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.footer-left > .row {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-right > .row {
+		min-height: 35%;
+	}
+
+	.footer-section {
+		border: none;
+		padding: 25px;
+
+		@media screen and ( min-width: 997px ) {
+			&:not(:last-child) {
+				border-right: 1px solid rgba( 255, 255, 255, .6 );
+			}
+		}
+	}
+
+	.design-cred {
+		align-items: flex-end;
+	}
 }
