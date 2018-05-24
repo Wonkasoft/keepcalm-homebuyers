@@ -37,13 +37,22 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 </section> <!-- .container-fluid contemt-section -->
-<section id="testimonials" class="container-fluid content-section">
+<?php
+	$testimonial_image = ( !get_theme_mod( 'testimonial_image' ) ) ? '' : get_theme_mod( 'testimonial_image' );
+	if ( $testimonial_image == '' ) :
+
+	else :
+?>
+<section id="testimonials" class="container-fluid content-section" style="background-image:url( <?php $testimonial_image; ?> ) no-repeat;background-position: center center;background-size: cover;">
 	<div class="row justify-content-center">
 		<div class="col-6 text-center">
 			<h1 class="section-title">Keep calm Testimonials</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 </section> <!-- .container-fluid content-section -->
+<?php
+endif;
+?>
 <section class="content-section">
 	<div class="row no-gutters">
 		<?php 

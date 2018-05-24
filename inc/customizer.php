@@ -37,7 +37,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'description'	=> __( 'Theme Settings', 'keepcalm-homebuyers' )
 		 ) );
 	/**
-	 * Putting in Main Image
+	 * For Main Image on home page
 	 * @since 1.0.0 [Adding in Main Image]
 	 */
 	$wp_customize->add_section( 'main_section', array(
@@ -57,8 +57,8 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		'transport'	=> 'refresh'
 		) );
 	/**
-	 * Controller
-	 * @since 1.0.0 [add control]
+	 * Control for main iamge
+	 * @since 1.0.0 [Control for main image]
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
@@ -67,6 +67,42 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'label' 		=> __( 'Main Image', 'keepcalm-homebuyers' ), 
 			'section'		=> 'main_section', 
 			'setting'		=> 'main_image', 
+			'type'			=> 'image',
+			'description'	=> __( 'Chose Main Image', 'keepcalm-homebuyers' )
+		)
+	) );
+
+		/**
+	 * For Testimonial background Image
+	 * @since 1.0.0 [Adding in Testimonials Background Image]
+	 */
+	$wp_customize->add_section( 'testimonials_section', array(
+		'capability'	=> 'edit_theme_options',
+		'theme_support'	=> '',
+		'priority'		=> 12,
+		'title'			=> __( 'Testimonial Section', 'keepcalm-homebuyers' ),
+		'description'	=> __( 'Testimonial Section Options', ' keepcalm-homebuyers' ),
+		'panel'			=> 'ft_theme_options' 
+		) );
+	/**
+	 * Testimonial background image setting
+	 * @since 1.0.0 [Testimonial background Image setings]
+	 */
+	$wp_customize->add_setting( 'testimonial_image', array(
+		'defualt'	=> '',
+		'transport'	=> 'refresh'
+		) );
+	/**
+	 * Controller for testimonial background image
+	 * @since 1.0.0 [Control for testimonial background image]
+	 */
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize,
+		'main_image', 
+		array(
+			'label' 		=> __( 'Main Image', 'keepcalm-homebuyers' ), 
+			'section'		=> 'testimonials_section', 
+			'setting'		=> 'testimonial_image', 
 			'type'			=> 'image',
 			'description'	=> __( 'Chose Main Image', 'keepcalm-homebuyers' )
 		)
