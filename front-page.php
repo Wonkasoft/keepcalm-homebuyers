@@ -14,12 +14,25 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 <section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
 <section id="primary" class="container-fluid">
 	<main id="main" class="site-main">
-		
-		<h1 class="arrow-message">
-			<span class="top-row-message"><span class="bold-message">Keep</span><span class="upper-message calm-message"> Calm</span>
-			we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
-		</h1> <!-- .arrow-message -->
-		
+		<div class="row">
+			<div class="col">
+				<h1 class="arrow-message">
+					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
+					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
+				</h1> <!-- .arrow-message -->
+			</div> <!-- .col -->
+		</div> <!-- .row -->
+		<div class="row">
+			<div class="col">
+				<form id="address-submit" action method="post">
+					<div class="form-fields-wrap">
+						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
+						<input type="address" name="address" />
+						<input type="submit" name="submit_btn" value="Get Help Now!">
+					</div>
+				</form>
+			</div> <!-- .col -->
+		</div> <!-- .row -->
 		</main><!-- #main -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
@@ -30,7 +43,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 	</div> <!-- /row -->
 	<div class="row justify-content-center">
 		<div class="col-6 text-center">
-			<p class=""><span>keep calm home buyers</span>can purchase your home fast to help in situations such 
+			<p class="problem-content"><span>keep calm home buyers</span> can purchase your home fast to help in situations such 
 				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
 				hassle-free sale of your home. Let us help you!
 			</p>
@@ -43,10 +56,10 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 
 	else :
 ?>
-<section id="testimonials" class="container-fluid content-section" style="background:url( '<?php echo $testimonial_image; ?>' ) no-repeat;background-position: center center;background-size: cover;">
+<section id="testimonials" class="container-fluid content-section" style="background:url( '<?php echo $testimonial_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
 	<div class="row justify-content-center">
 		<div class="col-6 text-center">
-			<h1 class="section-title">Keep calm Testimonials</h1>
+			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 </section> <!-- .container-fluid content-section -->
