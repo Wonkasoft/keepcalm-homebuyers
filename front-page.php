@@ -43,7 +43,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 
 	else :
 ?>
-<section id="testimonials" class="container-fluid content-section" style="background-image:url( <?php echo $testimonial_image; ?> ) no-repeat;background-position: center center;background-size: cover;">
+<section id="testimonials" class="container-fluid content-section" style="background-image:url( '<?php echo $testimonial_image; ?>' ) no-repeat;background-position: center center;background-size: cover;">
 	<div class="row justify-content-center">
 		<div class="col-6 text-center">
 			<h1 class="section-title">Keep calm Testimonials</h1>
