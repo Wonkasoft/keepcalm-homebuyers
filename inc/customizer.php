@@ -98,13 +98,13 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'main_image', 
+		'testimonial_image', 
 		array(
-			'label' 		=> __( 'Main Image', 'keepcalm-homebuyers' ), 
+			'label' 		=> __( 'Testimonial Background Image', 'keepcalm-homebuyers' ), 
 			'section'		=> 'testimonials_section', 
 			'setting'		=> 'testimonial_image', 
 			'type'			=> 'image',
-			'description'	=> __( 'Chose Main Image', 'keepcalm-homebuyers' )
+			'description'	=> __( 'Chose Background Image', 'keepcalm-homebuyers' )
 		)
 	) );
 
