@@ -119,7 +119,7 @@ endif;
 
 	else :
 ?>
-<section class="container-fluid content-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
+<section class="container-fluid contact-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
 	<div class="row">
 		<div class="col">
 			<div class="contact-form-wrap">
