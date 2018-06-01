@@ -28,7 +28,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
 						<input type="address" name="address" />
-						<input type="submit" name="submit_btn" value="Get Help Now!">
+						<input type="submit" name="submit_btn" value="Get Help Now!" />
 					</div>
 				</form>
 			</div> <!-- .col -->
@@ -47,6 +47,12 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
 				hassle-free sale of your home. Let us help you!
 			</p>
+		</div> <!-- /col -->
+	</div> <!-- /row -->
+	<div class="row justify-content-center">
+		<div class="col-6 text-center">
+			<span class="referral-content"><i class="yellow-circle"><img src="<?php echo get_theme_file_uri( '/assets/img/blue-knot.png' ); ?>"></i> *Do not forget, we pay for referrals!
+			</span>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 </section> <!-- .container-fluid contemt-section -->
