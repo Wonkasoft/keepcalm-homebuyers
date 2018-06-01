@@ -81,6 +81,13 @@ if ( ! function_exists( 'keepcalm_homebuyers_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Add Gravity form support
+		 * Hide gform field labels
+		 * @since  1.0.0 [<init>]
+		 */
+		add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 	}
 endif;
 add_action( 'after_setup_theme', 'keepcalm_homebuyers_setup' );
