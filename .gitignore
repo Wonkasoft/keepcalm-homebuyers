@@ -3,5 +3,6 @@ package-lock.json
 .phpintel
 phpcs.phar
 phpcbf.phar
+node_modules
 node_modules/*
 *.swp
