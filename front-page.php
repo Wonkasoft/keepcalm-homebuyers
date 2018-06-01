@@ -82,9 +82,13 @@ endif;
 			if ( $i == 1 || $i == 5 ) :
 				?>
 				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
-					<div>
-						<h2><?php echo $grid_image_title; ?></h2>
-						<p><?php echo $grid_image_decription; ?></p>
+					<div class="text-wrap">
+						<?php
+							if ( $grid_image_title != '' ) :
+							echo '<h2>'.$grid_image_title.'</h2>';
+						  echo '<p>'.$grid_image_decription.'</p>';
+						endif;
+						?>
 					</div>
 				</div> <!-- .col -->
 
@@ -92,9 +96,13 @@ endif;
 			else :
 				?>
 				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
-					<div>
-						<h2><?php echo $grid_image_title; ?></h2>
-						<p><?php echo $grid_image_decription; ?></p>
+					<div class="text-wrap">
+						<?php
+							if ( $grid_image_title != '' ) :
+							echo '<h2>'.$grid_image_title.'</h2>';
+						  echo '<p>'.$grid_image_decription.'</p>';
+						endif;
+						?>
 					</div>
 				</div> <!-- .col -->
 				<?php
