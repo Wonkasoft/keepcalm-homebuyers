@@ -298,7 +298,7 @@
 		text-align: center;
 	}
 
-	.ginput_recaptcha {
+	.gform_description {
 		text-align: center;
 	}
 
@@ -315,6 +315,22 @@
 		font-family: $font__opsanbold;
 		text-transform: uppercase;
 		border-radius: 0;
+	}
+
+	@media only screen and ( min-width: 641px ) {
+
+		.gform_wrapper ul.gform_fields li.gfield {
+			width: 48.9%;
+		}
+
+		.gform_wrapper ul.gform_fields li.gfield:not( :nth-child(4) ) {
+			width: 48.9%;
+			float: left;
+		}
+
+		.gform_wrapper ul.gform_fields li.gfield:nth-child(4) {
+			float: right;
+		}
 	}
 }
 
