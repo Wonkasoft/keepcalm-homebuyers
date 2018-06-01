@@ -76,14 +76,15 @@ endif;
 	<div class="row no-gutters">
 		<?php 
 		for ($i = 1; $i < 7; $i++) :
+			$grid_image_title = ( !get_theme_mod( 'grid_image_title' . $i ) ) ? '' : get_theme_mod( 'grid_image_title' . $i );
 			$grid_image = ( !get_theme_mod( 'grid_image_' . $i ) ) ? get_template_directory_uri() . '/assets/img/default-grid-image-' . $i . '.jpg': get_theme_mod( 'grid_image_' . $i );
-			$grid_image_id = attachment_url_to_postid( $grid_image );
-			$grid_image_alt = ( !get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true ) ) ? 'grid image ' . $i : get_post_meta( $grid_image_id, '_wp_attachment_image_alt', true );
+			$grid_image_decription = ( !get_theme_mod( 'grid_image_description' . $i ) ) ? '' : get_theme_mod( 'grid_image_description' . $i );
 			if ( $i == 1 || $i == 5 ) :
 				?>
 				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
-						<h2><?php echo $grid_image_alt; ?></h2>
+						<h2><?php echo $grid_image_title; ?></h2>
+						<p><?php echo $grid_image_decription; ?></p>
 					</div>
 				</div> <!-- .col -->
 
@@ -92,7 +93,8 @@ endif;
 				?>
 				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div>
-						<h2><?php echo $grid_image_alt; ?></h2>
+						<h2><?php echo $grid_image_title; ?></h2>
+						<p><?php echo $grid_image_decription; ?></p>
 					</div>
 				</div> <!-- .col -->
 				<?php
@@ -101,10 +103,16 @@ endif;
 		?>
 	</div> <!-- .row -->
 </section> <!-- .container-fluid content-section -->
-	<?php if ( get_theme_mod( 'contact' ) != '' ) :
-		$contact = get_theme_mod( 'contact' ); ?>
-		<section class="container-fluid content-section">
-			<?php echo do_shortcode( $contact, true ); ?>
+
+<?php
+	$contact_bg_image = ( !get_theme_mod( 'contact_bg' ) ) ? '' : get_theme_mod( 'contact_bg' );
+	$contactform = ( !get_theme_mod( 'contact_form' ) ) ? '' : get_theme_mod( 'contact_form' );
+	if ( $contactform == '' ) :
+
+	else :
+?>
+		<section class="container-fluid content-section class="container-fluid content-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
+			<?php echo do_shortcode( $contactform, true ); ?>
 		</section> <!-- .container-fluid content-section -->
 		<?php 
 	endif; 
