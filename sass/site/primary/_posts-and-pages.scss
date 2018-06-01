@@ -289,10 +289,33 @@
 
 .contact-form-wrap {
 	@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
-	margin: 25px auto;
+	margin: 35px auto;
 	padding: 15px;
 	width: 900px;
 	background: rgba( #fff, 1 );
+
+	.gform_title {
+		text-align: center;
+	}
+
+	.ginput_recaptcha {
+		text-align: center;
+	}
+
+	.gform_footer {
+		text-align: center;
+	}
+
+	input[type="submit"] {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
+		cursor: pointer;
+		margin: 15px auto;
+		background: #c3fc06;
+		padding: 15px 20px;
+		font-family: $font__opsanbold;
+		text-transform: uppercase;
+		border-radius: 0;
+	}
 }
 
 #colophon {
