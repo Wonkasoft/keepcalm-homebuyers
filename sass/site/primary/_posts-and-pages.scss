@@ -295,6 +295,7 @@
 	background: rgba( #fff, 1 );
 
 	.gform_title {
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
@@ -304,6 +305,10 @@
 
 	.gform_footer {
 		text-align: center;
+	}
+
+	input {
+		border: 2px solid #35b3ef;
 	}
 
 	input[type="submit"] {
@@ -324,12 +329,16 @@
 		}
 
 		.gform_wrapper ul.gform_fields li.gfield:not( :nth-child(4) ) {
-			width: 48.9%;
+			clear: left;
 			float: left;
 		}
 
 		.gform_wrapper ul.gform_fields li.gfield:nth-child(4) {
+			padding: 0;
 			float: right;
+			clear: none;
+			margin-top: -116px;
+			height: 325px;
 		}
 	}
 }
