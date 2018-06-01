@@ -13,27 +13,25 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 ?>
 <section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
 <section id="primary" class="container-fluid">
-	<main id="main" class="site-main">
-		<div class="row">
-			<div class="col">
+		<div class="row justify-content-center">
+			<div class="col col-4">
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
 				</h1> <!-- .arrow-message -->
 			</div> <!-- .col -->
 		</div> <!-- .row -->
-		<div class="row">
-			<div class="col">
+		<div class="row justify-content-center">
+			<div class="col col-8">
 				<form id="address-submit" action method="post">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
-						<input type="address" name="address" />
+						<input type="address" size="35" name="address" placeholder="Enter your address..." />
 						<input type="submit" name="submit_btn" value="Get Help Now!" />
 					</div>
 				</form>
 			</div> <!-- .col -->
 		</div> <!-- .row -->
-		</main><!-- #main -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
 	<div class="row">
@@ -50,7 +48,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 	<div class="row justify-content-center">
-		<div class="col-6 text-center">
+		<div class="col col-md-6 text-center">
 			<span class="referral-content"><i class="yellow-circle"><img src="<?php echo get_theme_file_uri( '/assets/img/blue-knot.png' ); ?>"></i> *Do not forget, we pay for referrals!
 			</span>
 		</div> <!-- /col -->
