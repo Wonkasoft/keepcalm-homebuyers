@@ -89,9 +89,6 @@
 
 #primary {
 	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	min-height: 425px;
 }
 
@@ -108,7 +105,9 @@
 .arrow-message {
 	position: relative;
 	color: #fff;
-	height: 198px;
+	height: 200px;
+	width: 475px;
+	margin: 15px auto;
 	padding: 60px 65px 60px 30px;
 	font-family: $font__opsani;
 	font-size: 2.4rem;
@@ -144,11 +143,14 @@
 	line-height: 2.3;
 
 	.form-fields-wrap {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
 		display: flex;
 		align-items: center;
+		margin: 0 auto;
 	}
 
 	.marker-wrap {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
 		color: #fff;
 		font-size: 1.5rem;
 		padding: 0 20px;
@@ -158,7 +160,7 @@
 	}
 
 	input {
-		padding: 1px;
+		padding: 8px;
 		height: 54px;
 		border: none;
 		font-size: 1.5rem;
@@ -166,12 +168,13 @@
 	}
 
 	input[type="submit"] {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
+		cursor: pointer;
 		background: #c3fc06;
 		padding: 15px 20px;
 		font-family: $font__opsanboldi;
 		text-transform: uppercase;
 		border-radius: 0;
-		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
 	}
 }
 
@@ -204,6 +207,7 @@
 	border-top: 5px solid #c3fc06;
 	border-bottom: 5px solid #c3fc06;
 	font-size: 2.8rem;
+	line-height: 1.2;
 	font-weight: bold;
 
 	.yellow-circle {
