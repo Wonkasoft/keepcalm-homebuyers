@@ -49,8 +49,10 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 	</div> <!-- /row -->
 	<div class="row justify-content-center">
 		<div class="col col-md-6 text-center">
-			<span class="referral-content"><i class="yellow-circle"><img src="<?php echo get_theme_file_uri( '/assets/img/blue-knot.png' ); ?>"></i> *Do not forget, we pay for referrals!
+			<div class="referral-wrap">
+			<i class="yellow-circle"><img src="<?php echo get_theme_file_uri( '/assets/img/blue-knot.png' ); ?>" /></i><span class="referral-content">*Do not forget, we pay for referrals!
 			</span>
+		</div> <!-- /referral-wrap -->
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 </section> <!-- .container-fluid contemt-section -->
@@ -70,7 +72,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 <?php
 endif;
 ?>
-<section class="content-section">
+<section class="grid-section">
 	<div class="row no-gutters">
 		<?php 
 		for ($i = 1; $i < 7; $i++) :
@@ -109,9 +111,15 @@ endif;
 
 	else :
 ?>
-		<section class="container-fluid content-section class="container-fluid content-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
-			<?php echo do_shortcode( $contactform, true ); ?>
-		</section> <!-- .container-fluid content-section -->
-		<?php 
-	endif; 
-	get_footer();
+<section class="container-fluid content-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
+	<div class="row">
+		<div class="col">
+			<div class="contact-form-wrap">
+				<?php echo do_shortcode( $contactform, true ); ?>
+			</div>
+		</div> <!-- .col -->
+	</div> <!-- .row -->
+</section> <!-- .container-fluid content-section -->
+<?php 
+endif; 
+get_footer();
