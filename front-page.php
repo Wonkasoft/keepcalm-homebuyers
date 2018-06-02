@@ -68,6 +68,18 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
+	<?php
+	$args = array(
+		'post_type' => 'testimonial_post',
+		'posts_per_page' => 4
+	);
+	$loop = new WP_Query( $args );
+	if ( $loop->have_posts() ) : while ( $loop-> have_posts() ) : $loop->the_post(); $count++;
+		get_template_part( 'template-parts/content', 'testimonials' );
+		endwhile;
+	endif;
+wp_reset_postdata();
+?>
 </section> <!-- .container-fluid content-section -->
 <?php
 endif;
