@@ -64,18 +64,31 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 ?>
 <section id="testimonials" class="container-fluid content-section" style="background:url( '<?php echo $testimonial_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
 	<div class="row justify-content-center">
-		<div class="col col-md-8 text-center">
+		<div class="col-6 text-center">
 			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 	<?php
 	$args = array(
-		'post_type' => 'testimonial_post',
-		'posts_per_page' => 4
+		'post_type' 			=> 'testimonial_post',
+		'posts_per_page' 	=> 4
 	);
 	$loop = new WP_Query( $args );
-	if ( $loop->have_posts() ) : while ( $loop-> have_posts() ) : $loop->the_post(); $count++;
-		get_template_part( 'template-parts/content', 'testimonials' );
+	$counter = 1;
+	if ( $loop->have_posts() ) : while ( $loop-> have_posts() ) : $loop->the_post(); 
+		$name = get_the_title();
+		$excerpt = get_the_excerpt();
+		$link = get_the_permalink();
+		?>
+		<div class="row justify-content-center">
+			<div class="col col-md-4">
+				<div class="testimonial-module" id="testimonial-module-<?php echo $counter; ?>">
+					<a href="<?php echo $link; ?>"><?php echo $name. ' ' .$excerpt; ?></a>
+				</div> <!-- /testimonial-module -->
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+		<?php
+		$counter++;
 		endwhile;
 	endif;
 wp_reset_postdata();
