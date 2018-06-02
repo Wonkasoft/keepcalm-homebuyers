@@ -379,13 +379,15 @@
 	.footer-left > .row {
 		align-items: center;
 		justify-content: center;
+
+		small {
+			line-height: 1.1;
+		}
 	}
 
 	.footer-right > .row {
 		align-items: center;
 		justify-content: center;
-		
-
 	}
 
 	span.circle-icon {
