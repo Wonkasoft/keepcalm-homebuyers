@@ -1,21 +1,22 @@
 ( function() {
 	'use strict';
 
-	var search_btn = document.getElementById('search-btn'),
-	search_input = document.getElementById('s');
-  search_input.style.left = '100%';
-  var search_input_set = search_input.style.left;
+	var search_btn = document.getElementById('search-btn');
+	
+	search_btn.addEventListener( "click", search_slide );
 
-	search_btn.onclick = function() {
-		if ( search_input_set == '100%' ) {
-			search_input.style.left = '0%';
-			search_input.focus();
-			search_input.onblur = function() { search_input.style.left = '100%'; search_input.value = ''; };
-		} else {
-			search_input.style.left = '100%';
-		}
-	};
 })();
+
+function search_slide() {
+  var search_input = document.getElementById('s');
+  if ( search_input.classList.contains( 'active' ) ) {
+    search_input.classList.remove('active');
+  } else {
+    search_input.classList.add('active');
+    setTimeout( function() {search_input.focus();}, 500 );
+    search_input.onblur = function() { search_input.classList.remove( 'active' ); search_input.value = ''; };
+  }
+}
 
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
