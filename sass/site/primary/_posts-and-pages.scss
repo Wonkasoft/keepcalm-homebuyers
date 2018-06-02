@@ -285,12 +285,13 @@
 .testimonial-section-title {
 	color: #0b98ce;
 	font-family: $font__opsanlight;
-	font-size: $font__h1-title;
+	font-size: 5.5rem;
 }
 
 .masonary-grid-img {
 	display: flex;
 	align-items: flex-end;
+	justify-content: flex-start;
 	height: 375px;
 
 	> div {
@@ -302,7 +303,7 @@
 
 		> h2 {
 			padding: 8px;
-			margin: 0;
+			margin: 8px;
 		}
 	}
 }
@@ -423,15 +424,15 @@
 	span.circle-icon {
 		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
 		display: inline-flex;
-	    align-items: center;
-	    justify-content: center;
-	    font-size: 2rem;
-	    margin: 0 25px;
-	    padding: 0;
-	    width: 50px;
-	    height: 50px;
-	    background: #fff;
-	    border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+		margin: 16px 25px 0;
+		padding: 0;
+		width: 75px;
+		height: 75px;
+		background: #fff;
+		border-radius: 50%;
 
 	    i.fa {
 	    	color: #2c98ce;
@@ -439,7 +440,7 @@
 	}
 
 	.footer-right > .design-cred {
-		min-height: 65%;
+		min-height: 60%;
 		align-items: flex-end;
 	}
 
