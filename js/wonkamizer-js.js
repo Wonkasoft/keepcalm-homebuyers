@@ -3,11 +3,11 @@
 
 	var search_btn = document.getElementById('search-btn'),
 	search_input = document.getElementById('s');
-	search_input.style.left = '100%';
+  search_input.style.left = '100%';
+  var search_input_set = search_input.style.left;
 
 	search_btn.onclick = function() {
-			console.log( search_input.style.left );
-		if ( search_input.style.left == '100%' ) {
+		if ( search_input_set == '100%' ) {
 			search_input.style.left = '0%';
 			search_input.focus();
 			search_input.onblur = function() { search_input.style.left = '100%'; search_input.value = ''; };

@@ -44,11 +44,25 @@
 
 			form {
 				overflow: hidden;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				@include prefix( transition, all .3s ease-in-out, webkit moz o );
 
+				div.search-input-wrap {
+					overflow: hidden;
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
+				}
 				input {
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
 					position: relative;
 					left: 100%;
-					@include prefix( transition, all .2s ease-in-out, webkit moz o );
+				}
+
+				#search-btn {
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
+					margin: 0 8px;
 				}
 			}
 		}
