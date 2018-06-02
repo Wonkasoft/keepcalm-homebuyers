@@ -44,11 +44,29 @@
 
 			form {
 				overflow: hidden;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				@include prefix( transition, all .3s ease-in-out, webkit moz o );
 
-				input {
+				div.search-input-wrap {
+					overflow: hidden;
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
+				}
+				input.slid {
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
 					position: relative;
-					left: 100%;
-					@include prefix( transition, all .2s ease-in-out, webkit moz o );
+					left: 105%;
+
+					&.active {
+						left: 0%;
+					}
+				}
+
+				#search-btn {
+					@include prefix( transition, all .3s ease-in-out, webkit moz o );
+					margin: 0 8px;
 				}
 			}
 		}
@@ -175,6 +193,12 @@
 		font-family: $font__opsanboldi;
 		text-transform: uppercase;
 		border-radius: 0;
+	}
+}
+
+.pac-container.pac-logo {
+	&:after {
+		display: none;
 	}
 }
 
@@ -379,22 +403,38 @@
 	.footer-left > .row {
 		align-items: center;
 		justify-content: center;
+
+		small {
+			line-height: 1.1;
+		}
 	}
 
 	.footer-right > .row {
 		align-items: center;
 		justify-content: center;
-		
-		span.circle-icon {
-			font-size: 2rem;
-			margin: 0 25px;
-		}
+	}
 
-		.design-cred {
-			min-height: 65%;
-			align-items: flex-end;
-		}
+	span.circle-icon {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
+		display: inline-flex;
+	    align-items: center;
+	    justify-content: center;
+	    font-size: 2rem;
+	    margin: 0 25px;
+	    padding: 0;
+	    width: 50px;
+	    height: 50px;
+	    background: #fff;
+	    border-radius: 50%;
 
+	    i.fa {
+	    	color: #2c98ce;
+	    }
+	}
+
+	.footer-right > .design-cred {
+		min-height: 65%;
+		align-items: flex-end;
 	}
 
 	.footer-section {
