@@ -335,6 +335,10 @@
 			padding: 0 15px;
 		}
 
+		label.gfield_label {
+			display: none;
+		}
+
 		div.gform_footer {
 			text-align: center;
 		}
@@ -356,10 +360,7 @@
 			font-family: $font__opsanbold;
 			text-transform: uppercase;
 			border-radius: 0;
-			border-top: 1px solid rgba( #dc3545, 1 );
-			border-right: 1px solid transparent;
-			border-bottom: 1px solid rgba( #dc3545, 1 );
-			border-left: 1px solid transparent;
+			border: none;
 		}
 
 	}
@@ -404,7 +405,12 @@
 		align-items: center;
 		justify-content: center;
 
+		.copy-wrap {
+			padding: 8px 15px;
+		}
 		small {
+			padding: 8px 15px;
+		    display: inline-block;
 			line-height: 1.1;
 		}
 	}

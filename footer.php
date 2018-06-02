@@ -15,7 +15,8 @@
 	<div class="row">
 		<div class="col-4 footer-left footer-section">
 			<div class="row">
-				<div class="col-8 text-center">
+				<div class="col col-md-10 text-center">
+					<div class="footer-logo">
 					<?php 
 					$footer_logo =  ( ! get_theme_mod( 'footer_logo' ) ) ? '' : get_theme_mod( 'footer_logo' );
 					$copyright = ( ! get_theme_mod( 'copyright' ) ) ? '' : get_theme_mod( 'copyright' );
@@ -27,11 +28,14 @@
 					<?php
 					endif;
 					?>
+					</div> <!-- /footer-logo -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
-				<div class="col">
-				&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+				<div class="col col-md-10">
+					<div class="copy-wrap">
+						&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+					</div> <!-- /copy-wrap -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col-4 -->
