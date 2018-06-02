@@ -142,13 +142,15 @@ function keepcalm_homebuyers_scripts() {
 	 * For enqueues of scripts
 	 */
 	wp_enqueue_script( 'bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jQuery' ), 'all', true );
-
+	
 	wp_enqueue_script( 'keepcalm-homebuyers-navigation', str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/js/navigation.js' ), array(), '20151215', true );
 
 	wp_enqueue_script( 'keepcalm-homebuyers-skip-link-focus-fix', str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/js/skip-link-focus-fix.js' ), array(), '20151215', true );
 
 	wp_enqueue_script( 'wonkamizer-js', str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/js/wonkamizer-js.js' ), array(), 'all', true );
 
+	wp_enqueue_script( 'googleapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDsc039BlVZZfUB5eD1NCR9SJkhhBOw-mU&libraries=places&callback=initAutocomplete', array( 'wonkamizer-js' ), null, true );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -188,5 +190,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-
-
