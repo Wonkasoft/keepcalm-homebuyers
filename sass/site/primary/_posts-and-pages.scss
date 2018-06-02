@@ -280,12 +280,22 @@
 
 #testimonials {
 	height: 560px;
-}
 
-.testimonial-section-title {
-	color: #0b98ce;
-	font-family: $font__opsanlight;
-	font-size: 5.5rem;
+	div.testimonial-module {
+		width: 400px;
+	    background: #fff;
+	    padding: 15px;
+	    border: 3px solid rgba(51, 170, 226, 1);
+	    border-radius: 20px;
+	    font-size: 1.5rem;
+	}
+
+	.testimonial-section-title {
+		color: #0b98ce;
+		font-family: $font__opsanlight;
+		font-size: 5.5rem;
+		margin: 2px auto 15px;
+	}
 }
 
 .masonary-grid-img {
@@ -394,10 +404,6 @@
 	color: #fff;
 	@include prefix( box-shadow, 0 1px 6px 0 inset rgba( 0, 0, 0, .5 ), webkit moz o );
 
-	a {
-		color: #fff;
-	}
-
 	ul {
 		list-style: none;
 	}
@@ -442,6 +448,11 @@
 	.footer-right > .design-cred {
 		min-height: 60%;
 		align-items: flex-end;
+	}
+
+	h3.font-upper {
+		text-transform: uppercase;
+		font-family: $font__opsansemibold;
 	}
 
 	.footer-section {

@@ -42,7 +42,7 @@
 		<div class="col-4 footer-center footer-section">
 			<div class="row">
 				<div class="col text-center">
-					<h4 class="font-upper">Resources</h4>
+					<h3 class="font-upper">Resources</h3>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
@@ -67,7 +67,7 @@
 		<div class="col-4 footer-right footer-section">
 			<div class="row">
 				<div class="col text-center">
-					<h4 class="font-upper">Social Presence</h4>
+					<h3 class="font-upper">Social Presence</h3>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">

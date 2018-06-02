@@ -20,9 +20,8 @@ $link = get_the_permalink();
 
 <div class="row justify-content-center">
 	<div class="col col-md-4">
-		<div class="testimonial-module" id="module-<?php echo $count; ?>">
+		<div class="testimonial-module" id="module-<?php echo $counter; ?>">
 			<a href="<?php echo $link; ?>"><?php echo $name. ' ' .$excerpt; ?></a>
 		</div>
 	</div> <!-- /col -->
 </div> <!-- /row -->
-

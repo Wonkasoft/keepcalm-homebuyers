@@ -74,7 +74,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		'posts_per_page' => 4
 	);
 	$loop = new WP_Query( $args );
-	if ( $loop->have_posts() ) : while ( $loop-> have_posts() ) : $loop->the_post(); $count++;
+	if ( $loop->have_posts() ) : while ( $loop-> have_posts() ) : $loop->the_post();
 		get_template_part( 'template-parts/content', 'testimonials' );
 		endwhile;
 	endif;
