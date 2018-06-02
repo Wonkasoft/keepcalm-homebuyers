@@ -294,43 +294,52 @@
 	width: 900px;
 	background: rgba( #fff, 1 );
 
-	h3.gform_title {
-		font-size: 2.5rem;
-		text-align: center;
+	.gform_wrapper {
+		
+		h3.gform_title {
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		span.gform_description {
+			font-size: 1.3rem;
+			margin: auto;
+			text-align: center;
+		}
+
+		ul#gform_fields_1 {
+			padding: 0 15px;
+		}
+
+		div.gform_footer {
+			text-align: center;
+		}
+
+		input, textarea {
+			border: 2px solid #35b3ef;
+		}
+
+		textarea.textarea.large {
+			height: 100%;
+		}
+
+		input[type="submit"] {
+			@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
+			cursor: pointer;
+			margin: 15px auto;
+			background: #c3fc06;
+			padding: 15px 20px;
+			font-family: $font__opsanbold;
+			text-transform: uppercase;
+			border-radius: 0;
+			border-top: 1px solid rgba( #dc3545, 1 );
+			border-right: 1px solid transparent;
+			border-bottom: 1px solid rgba( #dc3545, 1 );
+			border-left: 1px solid transparent;
+		}
+
 	}
 
-	span.gform_description {
-		font-size: 1.3rem;
-		margin: auto;
-		text-align: center;
-	}
-
-	ul#gform_fields_1 {
-		padding: 0 15px;
-	}
-
-	div.gform_footer {
-		text-align: center;
-	}
-
-	input, textarea {
-		border: 2px solid #35b3ef;
-	}
-
-	textarea.textarea {
-		height: 100%;
-	}
-
-	input[type="submit"] {
-		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
-		cursor: pointer;
-		margin: 15px auto;
-		background: #c3fc06;
-		padding: 15px 20px;
-		font-family: $font__opsanbold;
-		text-transform: uppercase;
-		border-radius: 0;
-	}
 
 	@media only screen and ( min-width: 641px ) {
 
