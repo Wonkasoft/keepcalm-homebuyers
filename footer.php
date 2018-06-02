@@ -30,7 +30,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
-				<div class="col-8 text-center">
+				<div class="col">
 				&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
