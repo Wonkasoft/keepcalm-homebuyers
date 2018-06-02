@@ -190,3 +190,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+   
+/**
+ * Register Testimonial Post Type
+ * @since 1.0.0 [<init>]
+ */
+function testimonials_post_type() {
+	require get_template_directory() . '/inc/register-testimonials.php';
+}
+add_action( 'init', 'testimonials_post_type', 0 );
