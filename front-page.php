@@ -83,7 +83,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		<div class="row justify-content-center">
 			<div class="col col-md-4">
 				<div class="testimonial-module" id="testimonial-module-<?php echo $counter; ?>">
-					<a href="<?php echo $link; ?>"><?php echo $name. ' ' .$excerpt; ?></a>
+					<?php echo '<span class="name">'.$name. '</span> <span class="testimonial-quote">' .$excerpt. ' ... </span>'; ?><a href="<?php echo $link; ?>">Read more</a>
 				</div> <!-- /testimonial-module -->
 			</div> <!-- /col -->
 		</div> <!-- /row -->
