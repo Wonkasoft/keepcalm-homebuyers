@@ -30,7 +30,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
-				<div class="col-8 text-center">
+				<div class="col">
 				&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
@@ -67,7 +67,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
-				<div class="col">
+				<div class="col text-center">
 					<?php 
 					$facebook = ( ! get_theme_mod( 'facebook' ) ) ? '' : get_theme_mod( 'facebook' );
 					$twitter = ( ! get_theme_mod( 'twitter' ) ) ? '' : get_theme_mod( 'twitter' );
