@@ -385,16 +385,17 @@
 		align-items: center;
 		justify-content: center;
 		
-		span.circle-icon {
-			font-size: 2rem;
-			margin: 0 25px;
-		}
 
-		.design-cred {
-			min-height: 65%;
-			align-items: flex-end;
-		}
+	}
 
+	span.circle-icon {
+		font-size: 2rem;
+		margin: 0 25px;
+	}
+
+	.footer-right > .design-cred {
+		min-height: 65%;
+		align-items: flex-end;
 	}
 
 	.footer-section {
