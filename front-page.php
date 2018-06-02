@@ -62,9 +62,9 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 
 	else :
 ?>
-<section id="testimonials" class="container-fluid content-section" style="background:url( '<?php echo $testimonial_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
+<section id="testimonials" class="container-fluid content-section" style="background-image: linear-gradient( rgba( 255, 255, 255, .7 ), rgba( 255, 255, 255, .7 )), url( '<?php echo $testimonial_image; ?>' ); background-blend-mode: screen; background-position: center top;background-size: cover;">
 	<div class="row justify-content-center">
-		<div class="col-6 text-center">
+		<div class="col col-md-8 text-center">
 			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->

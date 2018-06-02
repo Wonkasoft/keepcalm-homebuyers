@@ -288,6 +288,17 @@
 	    border: 3px solid rgba(51, 170, 226, 1);
 	    border-radius: 20px;
 	    font-size: 1.5rem;
+	    color: #33aae2;
+
+	    .name {
+	    	font-family: $font__opsanbold;
+	    }
+
+	    a {
+	    	font-family: $font__opsanlighti;
+	    	text-decoration: underline;
+	    	color: #33aae2;
+	    }
 	}
 
 	.testimonial-section-title {
