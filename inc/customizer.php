@@ -376,7 +376,32 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Social Settings
+	 * Social Twitter Setting
+	 * @since  1.0.0 [<init>]
+	 */
+	$wp_customize->add_setting( 'twitter', array(
+		'default'	=> '',
+		'refresh'	=> 'refresh'
+	) );
+	
+	/**
+	 * Social Twitter Control
+	 * @since  1.0.0 [<init>]
+	 */
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'twitter',
+		array(
+		    'label' 		=> __( 'Twitter', 'keepcalm-homebuyers' ), 
+			'section'		=> 'social_section', 
+			'setting'		=> 'twitter', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input Twitter Link', 'keepcalm-homebuyers' )
+		)
+	) );
+
+		/**
+	 * Social Facebook Settings
 	 * @since 1.0.0 [social settings]
 	 */
 	$wp_customize->add_setting( 'facebook', array(
@@ -385,7 +410,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Social Control
+	 * Social Facebook Control
 	 * @since  1.0.0 [control for social links]
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -399,29 +424,20 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 			'description'	=> __( 'Input Facebook Link', 'keepcalm-homebuyers' )
 		)
 	) );
-	
-	$wp_customize->add_setting( 'twitter', array(
-		'default'	=> '',
-		'refresh'	=> 'refresh'
-	) );
-	
-	$wp_customize->add_control( new WP_Customize_Control(
-		$wp_customize,
-		'twitter',
-		array(
-		    'label' 		=> __( 'Twitter', 'keepcalm-homebuyers' ), 
-			'section'		=> 'social_section', 
-			'setting'		=> 'twitter', 
-			'type'			=> 'text',
-			'description'	=> __( 'Input Twitter Link', 'keepcalm-homebuyers' )
-		)
-	) );
 
+	/**
+	 * Social Instagram Setting
+	 * @since  1.0.0 [<init>]
+	 */
 	$wp_customize->add_setting( 'instagram', array(
 		'default'	=> '',
 		'refresh'	=> 'refresh'
 	) );
 
+	/**
+	 * Social Instagram Control
+	 * @since 1.0.0 [<init>]
+	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
 		'instagram',
