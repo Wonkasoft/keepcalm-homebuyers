@@ -382,7 +382,8 @@
 	}
 
 	.footer-right > .row {
-		min-height: 35%;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.footer-section {
@@ -396,7 +397,13 @@
 		}
 	}
 
+	span.circle-icon {
+		font-size: 2rem;
+		margin: 0 25px;
+	}
+
 	.design-cred {
+		min-height: 65%;
 		align-items: flex-end;
 	}
 }
