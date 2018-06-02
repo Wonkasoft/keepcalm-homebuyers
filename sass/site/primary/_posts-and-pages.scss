@@ -282,6 +282,7 @@
 	height: 560px;
 
 	div.testimonial-module {
+		position: relative;
 		width: 400px;
 	    background: #fff;
 	    padding: 15px;
@@ -300,6 +301,22 @@
 	    	text-decoration: underline;
 	    	color: #33aae2;
 	    }
+	}
+
+	div#testimonial-module-1 {
+		left: 50%;
+	}
+
+	div#testimonial-module-2 {
+		right: 100%;
+	}
+
+	div#testimonial-module-3 {
+		left: 45%;
+	}
+
+	div#testimonial-module-4 {
+		right: 70%;
 	}
 
 	.testimonial-section-title {
