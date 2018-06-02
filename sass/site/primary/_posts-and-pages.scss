@@ -178,6 +178,12 @@
 	}
 }
 
+.pac-container.pac-logo {
+	&:after {
+		display: none;
+	}
+}
+
 .upper-message {
 	text-transform: uppercase;
 }
