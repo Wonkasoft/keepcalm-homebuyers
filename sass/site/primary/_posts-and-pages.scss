@@ -533,6 +533,7 @@
 	height: 780px;
 	background: #0b98ce;
 	color: #fff;
+	overflow: hidden;
 
 	ul {
 		list-style: none;
@@ -592,7 +593,7 @@
 	}
 
 	.footer-right > .design-cred {
-		min-height: 55%;
+		align-self: flex-end;
 		align-items: flex-end;
 	}
 
