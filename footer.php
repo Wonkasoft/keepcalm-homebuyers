@@ -13,7 +13,7 @@
 </div><!-- #content -->
 <footer id="colophon" class="site-footer container-fluid">
 	<div class="row">
-		<div class="col-4 footer-left footer-section">
+		<div class="col col-md-4 footer-left footer-section">
 			<div class="row">
 				<div class="col col-md-10 text-center">
 					<div class="footer-logo">
@@ -39,7 +39,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col-4 -->
-		<div class="col-4 footer-center footer-section">
+		<div class="col col-md-4 footer-center footer-section">
 			<div class="row">
 				<div class="col text-center">
 					<h3 class="font-upper">Resources</h3>
@@ -64,7 +64,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col-4 -->
-		<div class="col-4 footer-right footer-section">
+		<div class="col col-md-4 footer-right footer-section">
 			<div class="row">
 				<div class="col text-center">
 					<h3 class="font-upper">Social Presence</h3>

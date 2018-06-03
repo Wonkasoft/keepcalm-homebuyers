@@ -9,25 +9,27 @@
 
 	$featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_uri() . '/assets/img/default-subpage-header-image.jpg' : get_the_post_thumbnail_url(); 
 ?>
-<div class="row" style="background: url('<?php echo $featured_image; ?>') no-repeat;background-position: center center;background-size: cover;">
-	<div class="col-lg-6 offset-lg-3 content-panel text-center">
+<div class="row align-items-center justify-content-center" style="background: url('<?php echo $featured_image; ?>') no-repeat;background-position: center center;background-size: cover;">
+	<div class="col col-md-6 content-panel text-center">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header class="row entry-header">
+		<div class="col">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</div> <!-- /col -->
 	</header><!-- .entry-header -->
 
 
-	<div class="entry-content">
-		<?php
-		the_content();
+		<div class="row entry-content">
+			<?php
+			the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'keepcalm-homebuyers' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-	</div>  <!-- .col-lg-6 text-center -->
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'keepcalm-homebuyers' ),
+				'after'  => '</div>',
+			) );
+			?>
+		</div><!-- .row.entry-content -->
+	
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
@@ -51,4 +53,5 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+</div>  <!-- .col-lg-6 text-center -->
 </div> <!-- /.row -->

@@ -1,3 +1,8 @@
+#page {
+	position: relative;
+	min-height: 100%;
+}
+
 .sticky {
 	display: block;
 }
@@ -8,7 +13,7 @@
 
 #masthead {
 	position: relative;
-	height: 140px;
+	min-height: 240px;
 	background: rgba(0, 0, 0, .5);
 	z-index: 100;
 
@@ -86,11 +91,14 @@
 	}
 
 	#primary-menu {
-		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		text-transform: uppercase;
 		@include font-size(1);
+	}
+
+	@include media-breakpoint-up( md ) {
+		min-height: 140px;
 	}
 }
 
@@ -388,7 +396,7 @@
 		@include prefix( transition, all .3s ease-in-out, webkit moz o );
 		content: '';
 		position: absolute;
-		border: 3px solid #fff;
+		border: 3px solid rgba( #fff, .5 );
 		top: -8px;
 		left: -8px;
 		right: -8px;
@@ -510,10 +518,21 @@
 	}
 }
 
+#content {
+	padding-bottom: 780px;
+
+	@include media-breakpoint-up( md ) {
+		padding-bottom: 320px;
+	}
+}
+
 #colophon {
+	@include prefix( box-shadow, 0 1px 6px 0 inset rgba( 0, 0, 0, .5 ), webkit moz o );
+	position: absolute;
+	bottom: 0;
+	height: 780px;
 	background: #0b98ce;
 	color: #fff;
-	@include prefix( box-shadow, 0 1px 6px 0 inset rgba( 0, 0, 0, .5 ), webkit moz o );
 
 	ul {
 		list-style: none;
@@ -543,6 +562,7 @@
 	}
 
 	span.circle-icon {
+		@include prefix( transition, all .3s ease-in-out, webkit moz o );
 		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
 		display: inline-flex;
 		align-items: center;
@@ -556,7 +576,18 @@
 		border-radius: 50%;
 
 	    i.fa {
+	    	@include prefix( transition, all .3s ease-in-out, webkit moz o );
+	    	@include prefix( text-shadow, 0 0 2px rgba( 0, 0, 0, 0 ), webkit moz o );
 	    	color: #2c98ce;
+	    }
+
+	    &:hover {
+	    	background: #c3fc06;
+
+		    i.fa {
+		    	@include prefix( text-shadow, 1px 1px 2px rgba( 0, 0, 0, .2 ), webkit moz o );
+		    	color: #2c99ee;
+		    }
 	    }
 	}
 
@@ -581,4 +612,30 @@
 		}
 	}
 
+	@include media-breakpoint-up( md ) {
+		height: 320px;
+	}
+
+}
+
+.page {
+	section#main {
+		height:100%;
+
+		.row {
+			height:100%;
+		}
+	}
+
+	.content-panel {
+		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
+		background: #fff;
+		margin: 35px;
+		color: #000;
+
+		a {
+			color: #000;
+
+		}
+	}
 }
