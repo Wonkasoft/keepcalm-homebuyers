@@ -14,7 +14,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 <section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
 <section id="primary" class="container-fluid">
 		<div class="row justify-content-center">
-			<div class="col col-4">
+			<div class="col col-md-4">
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
@@ -22,7 +22,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 			</div> <!-- .col -->
 		</div> <!-- .row -->
 		<div class="row justify-content-center">
-			<div class="col col-8">
+			<div class="col col-md-8">
 				<form id="address-submit" action method="post">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
@@ -40,7 +40,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 	<div class="row justify-content-center">
-		<div class="col-6 text-center">
+		<div class="col col-md-6 text-center">
 			<p class="problem-content"><span>keep calm home buyers</span> can purchase your home fast to help in situations such 
 				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
 				hassle-free sale of your home. Let us help you!
