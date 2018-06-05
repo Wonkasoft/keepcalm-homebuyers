@@ -66,7 +66,7 @@
 					</div> <!-- .col -->
 				</div> <!-- .row -->
 				<div class="row nav-row">
-					<div class="col text-right">
+					<div class="col">
 						<nav id="site-navigation" class="main-navigation">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 								<span class="hang-a-bur hang-a-bur-top"></span>
