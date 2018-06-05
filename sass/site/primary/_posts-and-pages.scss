@@ -86,8 +86,14 @@
 	}
 
 	#site-navigation {
-		max-width: 60%;
-		float: right;
+		@include prefix( transition, all .3s ease-in-out, webkit moz o );
+		max-width: 100%;
+		float: none;
+
+		@include media-breakpoint-up( md ) {
+			max-width: 60%;
+			float: right;
+		}
 	}
 
 	#primary-menu {
@@ -132,8 +138,8 @@
 .arrow-message {
 	position: relative;
 	color: #fff;
-	height: 200px;
-	width: 475px;
+	width: 100%;
+	max-width: 475px;
 	margin: 15px auto;
 	padding: 60px 65px 60px 30px;
 	font-family: $font__opsani;
