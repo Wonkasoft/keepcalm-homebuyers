@@ -36,14 +36,6 @@ gulp.task('default', function(){
 
 gulp.task('default', ['sass', 'sass2', 'js', 'imgPress', 'watch', 'browser-sync']);
 
-gulp.task('init', function() {
-
-	fs.mkdirSync(themeDir, 765, true);
-
-	fse.copySync('theme-boilerplate', themeDir + '/');
-
-});
-
 // Static server
 gulp.task('browser-sync', function() {
 	browserSync.init({
