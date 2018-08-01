@@ -58,9 +58,6 @@
 								get_search_form();
 								?>	
 								</li>
-								<li class="list-inline-item">
-									<a href="/my-account"><i class="fa fa-user"></i></a>
-								</li>
 							</ul> <!-- /sub-menu list -->
 						</nav> <!-- .account-row -->
 					</div> <!-- .col -->
