@@ -293,6 +293,9 @@
 	margin: 0 0 1.5em;
 }
 
+/**
+ * This is for on the front-page.php
+ */
 #testimonials {
 	height: 560px;
 
@@ -303,7 +306,8 @@
 	    padding: 15px;
 	    border: 3px solid rgba(51, 170, 226, 1);
 	    border-radius: 20px;
-	    font-size: 1.5rem;
+	    font-size: 1rem;
+	    line-height: 1.3;
 	    color: #33aae2;
 	    margin: 8px auto;
 
@@ -312,6 +316,7 @@
 	    }
 
 	    a {
+	    	float: right;
 	    	font-family: $font__opsanlighti;
 	    	text-decoration: underline;
 	    	color: #33aae2;
@@ -344,9 +349,12 @@
 		margin: 2px auto 15px;
 	}
 }
+/**
+ * END This is for on the front-page.php
+ */
 
 .masonary-grid-img {
-	@include prefix( transition, all .3s ease-in-out, webkit moz o );
+	@include prefix( transition, $grid__transitions, webkit moz o );
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
@@ -355,28 +363,35 @@
 	overflow: hidden;
 
 	> div {
-		@include prefix( transition, all .3s ease-in-out, webkit moz o );
-		display: inline-flex;
-		align-items: flex-end;
+		@include prefix( transition, $grid__transitions, webkit moz o );
 		width: 100%;
 		color: #fff;
-		margin-bottom: 35px;
-		margin-left: 45px;
 		height: 100%;
+		position: relative;
 
-		> h2 {
-			@include prefix( transition, all .3s ease-in-out, webkit moz o );
+		a {
+			display: inline-flex;
+			align-items: flex-end;
+			height: 100%;
+			width: 100%;
+			position: relative;
+			z-index: 5;
+		}
+
+		h2 {
+			@include prefix( transition, $grid__transitions, webkit moz o );
 			position: absolute;
 			text-transform: uppercase;
 			background: linear-gradient(-213deg, rgba( 0, 0, 0, .4 ), rgba( 0, 0, 0, .8 ) );
 			padding: 8px 15px;
 			margin: 0;
-			left: 5%;
+			top: 75%;
+			left: 30px;
 			white-space: nowrap;
 		}
 
-		> p {
-			@include prefix( transition, all .3s ease-in-out, webkit moz o );
+		p {
+			@include prefix( transition, $grid__transitions, webkit moz o );
 			position: absolute;
 			padding: 8px 15px;
 			margin: 0;
@@ -386,7 +401,7 @@
 	}
 
 	&:before {
-		@include prefix( transition, all .3s ease-in-out, webkit moz o );
+		@include prefix( transition, $grid__transitions, webkit moz o );
 		content: '';
 		position: absolute;
 		background: linear-gradient(-213deg, rgba( 0, 0, 0, .4 ), rgba( 0, 0, 0, .8 ) );
@@ -399,16 +414,17 @@
 	}
 
 	&:after {
-		@include prefix( transition, all .3s ease-in-out, webkit moz o );
+		@include prefix( transition, $grid__transitions, webkit moz o );
 		content: '';
 		position: absolute;
-		border: 3px solid rgba( #fff, .5 );
+		border: 3px solid rgba( #fff, .9 );
 		top: -8px;
 		left: -8px;
 		right: -8px;
 		bottom: -8px;
 		margin: auto;
 		opacity: 0;
+		border-radius: 8px;
 	}
 
 	&:hover {
@@ -432,12 +448,13 @@
 		
 		> div {
 
-			> h2 {
-				left: -100%;
+			h2 {
+				top: 10%;
 			}
 
-			> p {
-				left: 5%;
+			p {
+				left: 15px;
+				right: 15px;
 			}
 		}
 	}
@@ -629,14 +646,16 @@
 	section#main {
 		height:100%;
 
-		.row {
-			height:100%;
+		> .row {
+			align-items: center;
+			justify-content: center;
+			min-height: 500px;
 		}
 	}
 
 	.content-panel {
 		@include prefix( box-shadow, 0 1px 6px 0 rgba( 0, 0, 0, .4 ), webkit moz o );
-		background: #fff;
+		background: rgba( #fff, .8 );
 		margin: 35px;
 		color: #000;
 

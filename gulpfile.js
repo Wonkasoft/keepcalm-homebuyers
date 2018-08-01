@@ -34,13 +34,10 @@ gulp.task('default', function(){
 
 });
 
-gulp.task('default', ['sass', 'sass2', 'js', 'imgPress', 'watch', 'browser-sync']);
-
 // Static server
 gulp.task('browser-sync', function() {
 	browserSync.init({
-		proxy: 'localhost/' + siteName,
-		port: 81
+		proxy: 'localhost/' + siteName
 	});
 });
 
@@ -147,12 +144,16 @@ gulp.task('watch', function() {
 
 	gulp.watch('**/*.php').on('change', browserSync.reload);
 
-	gulp.watch('./sass/*/*.scss', ['sass', 'sass2']).on('change', browserSync.reload);
+	gulp.watch('**/*/*.php').on('change', browserSync.reload);
 
-	gulp.watch('./sass/*/*/*.scss', ['sass', 'sass2']).on('change', browserSync.reload);
+	gulp.watch('./sass/*/*.scss', gulp.series(gulp.parallel('sass', 'sass2'))).on('change', browserSync.reload);
 
-	gulp.watch('./js/*.*', ['js']).on('change', browserSync.reload);
+	gulp.watch('./sass/*/*/*.scss', gulp.series(gulp.parallel('sass', 'sass2'))).on('change', browserSync.reload);
 
-	gulp.watch('./images/*.{png,jpg,gif,jpeg,PNG,JPG,GIF,JPEG}', ['imgPress']).on('change', browserSync.reload);
+	gulp.watch('./js/*.*', gulp.series('js')).on('change', browserSync.reload);
+
+	gulp.watch('./images/*.{png,jpg,gif,jpeg,PNG,JPG,GIF,JPEG}', gulp.series('imgPress')).on('change', browserSync.reload);
 
 });
+
+gulp.task('default', gulp.series(gulp.parallel('sass', 'sass2', 'js', 'imgPress', 'watch', 'browser-sync')));
