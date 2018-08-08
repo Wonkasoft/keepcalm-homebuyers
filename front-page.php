@@ -19,7 +19,17 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 			<span class="top-row-message"><span class="bold-message">Keep</span><span class="upper-message calm-message"> Calm</span>
 			we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
 		</h1> <!-- .arrow-message -->
-		
+		<?php 
+		/*
+		 * Apply the filters by calling the 'example_callback' function we
+		 * "hooked" to 'example_filter' using the add_filter() function above.
+		 * - 'example_filter' is the filter hook $tag
+		 * - 'filter me' is the value being filtered
+		 * - $arg1 and $arg2 are the additional arguments passed to the callback.
+		 */
+		$value = apply_filters( 'my_own_hook', 'filter me', 'nope', 'arg2' );
+		echo $value;
+		?>
 		</main><!-- #main -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">

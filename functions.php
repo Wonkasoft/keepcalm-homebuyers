@@ -181,3 +181,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 
+// Our filter callback function
+function my_own_function( $string, $arg1 = NULL, $arg2 ) {
+    // (maybe) modify $string
+    $string .= ' Hello Wonka! ';
+    $string .= $arg1 . ' ';
+    $string .= $arg2;
+    return $string;
+}
+add_filter( 'my_own_hook', 'my_own_function', 10, 3 );
