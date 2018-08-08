@@ -7,6 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Keep_Calm_Home_Buyers
+ * @since  1.0.0 [<init>]
  */
 
 ?>
@@ -16,7 +17,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -26,7 +26,7 @@
 
 		<header id="masthead" class="container-fluid site-header">
 			<div class="row">
-				<div class="col-3">
+				<div class="col col-md-3">
 					<div class="custom-logo">
 						<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -48,7 +48,7 @@
 				<?php endif; ?>
 			</div> <!-- .custom-logo -->
 			</div> <!-- .col-5 -->
-			<div class="col-8">
+			<div class="col col-md-8">
 				<div class="row">
 					<div class="col text-right">
 						<nav class="account-row">
@@ -58,17 +58,18 @@
 								get_search_form();
 								?>	
 								</li>
-								<li class="list-inline-item">
-									<a href="/my-account"><i class="fa fa-user"></i></a>
-								</li>
 							</ul> <!-- /sub-menu list -->
 						</nav> <!-- .account-row -->
 					</div> <!-- .col -->
 				</div> <!-- .row -->
 				<div class="row nav-row">
-					<div class="col text-right">
+					<div class="col">
 						<nav id="site-navigation" class="main-navigation">
-							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'keepcalm-homebuyers' ); ?></button>
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<span class="hang-a-bur hang-a-bur-top"></span>
+								<span class="hang-a-bur hang-a-bur-mid"></span>
+								<span class="hang-a-bur hang-a-bur-bottom"></span>
+							</button>
 							<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',
