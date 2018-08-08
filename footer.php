@@ -79,19 +79,19 @@
 					if ( $facebook == '' ) :
 
 					else : ?>
-						<span class="circle-icon"><a href="<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></span>
+						<span class="circle-icon"><a href="<?php echo $twitter; ?>" target="_blank"><i class="fa fa-twitter"></i></a></span>
 					<?php endif;
 
 					if ( $twitter == '' ) :
 
 					else : ?>
-						<span class="circle-icon"><a href="<?php echo $facebook; ?>"><i class="fa fa-facebook"></i></a></span>
+						<span class="circle-icon"><a href="<?php echo $facebook; ?>" target="_blank"><i class="fa fa-facebook"></i></a></span>
 					<?php endif;
 
 					if ( $instagram == '' ) :
 
 					else : ?>
-						<span class="circle-icon"><a href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a></span>
+						<span class="circle-icon"><a href="<?php echo $instagram; ?>" target="_blank"><i class="fa fa-instagram"></i></a></span>
 					<?php endif; ?>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
