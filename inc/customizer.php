@@ -68,11 +68,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'main_image', 
+		'main_image_control', 
 		array(
 			'label' 		=> __( 'Main Image', 'keepcalm-homebuyers' ), 
 			'section'		=> 'main_section', 
-			'setting'		=> 'main_image', 
+			'settings'		=> 'main_image', 
 			'type'			=> 'image',
 			'description'	=> __( 'Chose Main Image', 'keepcalm-homebuyers' )
 		)
@@ -106,11 +106,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'testimonial_image', 
+		'testimonial_image_control', 
 		array(
 			'label' 		=> __( 'Testimonial Background Image', 'keepcalm-homebuyers' ), 
 			'section'		=> 'testimonials_section', 
-			'setting'		=> 'testimonial_image', 
+			'settings'		=> 'testimonial_image', 
 			'type'			=> 'image',
 			'description'	=> __( 'Chose Background Image', 'keepcalm-homebuyers' )
 		)
@@ -139,7 +139,7 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		 * Grid Section Image title settings
 		 * @since 1.0.0 
 		 */
-		$wp_customize->add_setting( 'grid_image_title' . $i, array(
+		$wp_customize->add_setting( 'grid_image_title_' . $i, array(
 			'default'	=> '',
 			'transport'	=> 'refresh'
 		) );
@@ -150,13 +150,13 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		 */
 		$wp_customize->add_control( new WP_Customize_Control(
 			$wp_customize,
-			'grid_image_title' . $i, 
+			'grid_image_title_control_' . $i, 
 			array(
-				'label' 		=> __( 'Grid Image '. $i, 'keepcalm-homebuyers' ), 
+				'label' 		=> __( 'Image Title '. $i, 'keepcalm-homebuyers' ), 
 				'section'		=> 'grid_section', 
-				'setting'		=> 'grid_image_title' . $i, 
+				'settings'		=> 'grid_image_title_' . $i, 
 				'type'			=> 'text',
-				'description'	=> __( 'Chose Grid Image Title' . $i, 'keepcalm-homebuyers' )
+				'description'	=> __( 'Give grid image a title ' . $i, 'keepcalm-homebuyers' )
 			)
 		) );
 
@@ -175,21 +175,21 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		 */
 		$wp_customize->add_control( new WP_Customize_Image_Control(
 			$wp_customize,
-			'grid_image_' . $i, 
+			'grid_image_control_' . $i, 
 			array(
 				'label' 		=> __( 'Grid Image '. $i, 'keepcalm-homebuyers' ), 
 				'section'		=> 'grid_section', 
-				'setting'		=> 'grid_image_' . $i, 
+				'settings'		=> 'grid_image_' . $i, 
 				'type'			=> 'image',
-				'description'	=> __( 'Chose Grid Image ' . $i, 'keepcalm-homebuyers' )
+				'description'	=> __( 'Choose Grid Image ' . $i, 'keepcalm-homebuyers' )
 			)
 		) );
 
-		 /**
-		 * Grid Section Image Description settings
-		 * @since 1.0.0 
-		 */
-		$wp_customize->add_setting( 'grid_image_description' . $i, array(
+		/**
+		* Grid Section Image Description settings
+		* @since 1.0.0 
+		*/
+		$wp_customize->add_setting( 'grid_image_description_' . $i, array(
 			'default'	=> '',
 			'transport'	=> 'refresh'
 		) );
@@ -200,13 +200,38 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 		 */
 		$wp_customize->add_control( new WP_Customize_Control(
 			$wp_customize,
-			'grid_image_description' . $i, 
+			'grid_image_description_control_' . $i, 
 			array(
-				'label' 		=> __( 'Grid Image '. $i, 'keepcalm-homebuyers' ), 
+				'label' 		=> __( 'Image Description '. $i, 'keepcalm-homebuyers' ), 
 				'section'		=> 'grid_section', 
-				'setting'		=> 'grid_image_description' . $i, 
+				'settings'		=> 'grid_image_description_' . $i, 
 				'type'			=> 'textarea',
-				'description'	=> __( 'Chose Grid Image Description' . $i, 'keepcalm-homebuyers' )
+				'description'	=> __( 'Give image description ' . $i, 'keepcalm-homebuyers' )
+			)
+		) );
+
+		/**
+		* Grid Section Image Description settings
+		* @since 1.0.0 
+		*/
+		$wp_customize->add_setting( 'grid_image_link_' . $i, array(
+			'default'	=> '',
+			'transport'	=> 'refresh'
+		) );
+
+		/**
+		 * Grid Section Image Description Controller
+		 * @since 1.0.0
+		 */
+		$wp_customize->add_control( new WP_Customize_Control(
+			$wp_customize,
+			'grid_image_link_control_' . $i, 
+			array(
+				'label' 		=> __( 'Image Link'. $i, 'keepcalm-homebuyers' ), 
+				'section'		=> 'grid_section', 
+				'settings'		=> 'grid_image_link_' . $i, 
+				'type'			=> 'dropdown-pages',
+				'description'	=> __( 'Choose image link ' . $i, 'keepcalm-homebuyers' )
 			)
 		) );
 	endfor;
@@ -239,11 +264,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'contact_bg',
+		'contact_bg_control',
 		array(
 		    'label' 		=> __( 'Contact Section Background Image', 'keepcalm-homebuyers' ), 
 			'section'		=> 'contact_section', 
-			'setting'		=> 'contact_bg', 
+			'settings'		=> 'contact_bg', 
 			'type'			=> 'image',
 			'description'	=> __( 'Select Contact Section Background', 'keepcalm-homebuyers' )
 		)
@@ -264,11 +289,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'contact_form',
+		'contact_form_control',
 		array(
 		  'label' 			=> __( 'Contact Form Shortcode', 'keepcalm-homebuyers' ), 
 			'section'			=> 'contact_section', 
-			'setting'			=> 'contact_form', 
+			'settings'			=> 'contact_form', 
 			'type'				=> 'text',
 			'description'	=> __( 'Add Contact Form Shortcode', 'keepcalm-homebuyers' )
 		)
@@ -302,11 +327,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
-		'footer_logo',
+		'footer_logo_control',
 		array(
 		  'label' 		=> __( 'Footer Logo', 'keepcalm-homebuyers' ), 
 			'section'		=> 'footer_section', 
-			'setting'		=> 'footer_logo', 
+			'settings'		=> 'footer_logo', 
 			'image'			=> 'image',
 			'description'	=> __( 'Select a Logo recommended size 300px x 150px ', 'keepcalm-homebuyers' )
 		)
@@ -327,11 +352,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'copyright',
+		'copyright_control',
 		array(
 		    'label' 		=> __( 'Copyright Text', 'keepcalm-homebuyers' ), 
 			'section'		=> 'footer_section', 
-			'setting'		=> 'copyright', 
+			'settings'		=> 'copyright', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input Copyright Information', 'keepcalm-homebuyers' )
 		)
@@ -352,11 +377,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'design_credits',
+		'design_credits_control',
 		array(
 		    'label' 		=> __( 'Design credit', 'keepcalm-homebuyers' ), 
 			'section'		=> 'footer_section', 
-			'setting'		=> 'design_credits', 
+			'settings'		=> 'design_credits', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input design credits text', 'keepcalm-homebuyers' )
 		)
@@ -390,11 +415,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'twitter',
+		'twitter_control',
 		array(
 		    'label' 		=> __( 'Twitter', 'keepcalm-homebuyers' ), 
 			'section'		=> 'social_section', 
-			'setting'		=> 'twitter', 
+			'settings'		=> 'twitter', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input Twitter Link', 'keepcalm-homebuyers' )
 		)
@@ -415,11 +440,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'facebook',
+		'facebook_control',
 		array(
 		    'label' 		=> __( 'Facebook', 'keepcalm-homebuyers' ), 
 			'section'		=> 'social_section', 
-			'setting'		=> 'facebook', 
+			'settings'		=> 'facebook', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input Facebook Link', 'keepcalm-homebuyers' )
 		)
@@ -440,11 +465,11 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
-		'instagram',
+		'instagram_control',
 		array(
 		    'label' 		=> __( 'Instagram', 'keepcalm-homebuyers' ), 
 			'section'		=> 'social_section', 
-			'setting'		=> 'instagraml', 
+			'settings'		=> 'instagram', 
 			'type'			=> 'text',
 			'description'	=> __( 'Input instagram Link', 'keepcalm-homebuyers' )
 		)

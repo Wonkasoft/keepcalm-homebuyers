@@ -109,7 +109,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		<div class="row justify-content-center">
 			<div class="col col-md-4">
 				<div class="testimonial-module" id="testimonial-module-<?php echo $counter; ?>">
-					<?php echo '<span class="name">'.$name. '</span> <span class="testimonial-quote">' .$excerpt. ' ... </span>'; ?><a href="<?php echo $link; ?>">Read more</a>
+					<?php echo '<span class="name">'. $name . '</span> <span class="testimonial-quote">' . $excerpt . '</span>'; ?><a href="<?php echo $link; ?>"> ...Read more</a>
 				</div> <!-- /testimonial-module -->
 			</div> <!-- /col -->
 		</div> <!-- /row -->
@@ -130,17 +130,20 @@ endif;
 			$grid_image_title = ( !get_theme_mod( 'grid_image_title' . $i ) ) ? '' : get_theme_mod( 'grid_image_title' . $i );
 			$grid_image = ( !get_theme_mod( 'grid_image_' . $i ) ) ? get_template_directory_uri() . '/assets/img/default-grid-image-' . $i . '.jpg': get_theme_mod( 'grid_image_' . $i );
 			$grid_image_decription = ( !get_theme_mod( 'grid_image_description' . $i ) ) ? '' : get_theme_mod( 'grid_image_description' . $i );
+			$grid_image_link = ( !get_theme_mod( 'grid_image_link_' . $i ) ) ? '' : get_the_permalink( get_theme_mod( 'grid_image_link_' . $i ) );
 			if ( $i == 1 || $i == 5 ) :
 				?>
 				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
+						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
 							echo '<h2>'.$grid_image_title.'</h2>';
 						  echo '<p>'.$grid_image_decription.'</p>';
 						endif;
 						?>
-					</div>
+						</a> <!-- .tile-link -->
+					</div> <!-- .text-wrap -->
 				</div> <!-- .col -->
 
 				<?php
@@ -148,13 +151,15 @@ endif;
 				?>
 				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
+						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
 							echo '<h2>'.$grid_image_title.'</h2>';
 						  echo '<p>'.$grid_image_decription.'</p>';
 						endif;
 						?>
-					</div>
+						</a> <!-- .tile-link -->
+					</div> <!-- .text-wrap -->
 				</div> <!-- .col -->
 				<?php
 			endif;

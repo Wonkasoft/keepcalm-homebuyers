@@ -7,14 +7,17 @@
  * @package Keep_Calm_Home_Buyers
  */
 
-$featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_uri() . '/assets/img/default-subpage-header-image.jpg' : get_the_post_thumbnail_url(); 
 ?>
-<div class="row" style="background: url('<?php echo $featured_image; ?>') no-repeat;background-position: center center;background-size: cover;">
-	<div class="col col-md-6 content-panel text-center">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="row entry-header">
 		<div class="col">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php if ( is_archive() ) :
+			the_title( '<h1 class="entry-title"><a class="entry-title-link" href="' . get_the_permalink() . '">', '</a></h1>' );
+			else : ?>
+			<?php
+			the_title( '<h1 class="entry-title">', '</h1>' );
+			endif; ?>
+			<hr />
 		</div> <!-- /col -->
 	</header><!-- .entry-header -->
 
@@ -49,9 +52,9 @@ $featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_ur
 				'<span class="edit-link">',
 				'</span>'
 			);
+
+				the_post_navigation();
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
-</div>  <!-- .col-lg-6 text-center -->
-</div> <!-- /.row -->
