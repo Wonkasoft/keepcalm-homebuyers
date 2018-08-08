@@ -15,6 +15,32 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 <section id="primary" class="container-fluid">
 		<div class="row justify-content-center">
 			<div class="col col-md-4">
+				<?php 
+				$the_api_url = 'https://www.eventbriteapi.com/v3/organizers/13455175508/events/?status=live&token=WTKXN55ABMHYOJBKPXQV';
+				$response = wp_remote_get( $the_api_url, array( 'headers' => array( 'Content-Type' => 'application/json' ) ) ); 
+				$res = json_decode( $response['body'], true );
+				$total_pages = $res['pagination']['page_count'];
+					if( $total_pages > 1 ){
+						for( $i = 1; $i <= $total_pages; $i++ ){
+							$continuation = $res['pagination']['continuation'];
+							$eventbrite_api = $the_api_url . '&page=' . $i . '&continuation=' . $continuation;
+							$res_loop = wp_remote_get( $eventbrite_api ); 
+							if ( is_wp_error( $res_loop ) ) {
+								$iee_errors[] = __( 'Something went wrong, please try again.', 'import-eventbrite-events-pro');
+								return;
+							}
+							$my_events_loop = json_decode( $res_loop['body'], true );
+									var_dump($my_events_loop['pagination']);
+							if ( is_array( $my_events_loop ) && ! isset( $my_events_loop['error'] ) ) {
+								$events_loop = $my_events_loop['events'];
+								if( !empty( $events_loop ) ) {
+									foreach( $events_loop as $event_loop ) {
+
+									}
+								}
+							}
+						}
+					} ?>
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
