@@ -111,17 +111,38 @@
 
 		&:hover > a,
 		&.focus > a {
+
+			&:after {
+				height: 3px;
+			}
 		}
 	}
 
 	a {
+		position: relative;
 		padding: 8px;
 		display: block;
 		text-decoration: none;
+
+		&:after {
+			content: "";
+			position: absolute;
+			display: inline-block;
+			background: #c3fc06;
+			height: 0;
+			bottom: -3px;
+			left: 0;
+			right: 0;
+			@include prefix( transition, all 0.2s ease-in-out, webkit moz o);
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a {
+
+		&:after {
+			height: 3px;
+		}
 	}
 }
 

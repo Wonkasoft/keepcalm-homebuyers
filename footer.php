@@ -13,7 +13,7 @@
 </div><!-- #content -->
 <footer id="colophon" class="site-footer container-fluid">
 	<div class="row">
-		<div class="col col-md-4 footer-left footer-section">
+		<div class="col-sm col-md-4 footer-left footer-section">
 			<div class="row">
 				<div class="col col-md-10 text-center">
 					<div class="footer-logo">
@@ -31,22 +31,22 @@
 					</div> <!-- /footer-logo -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
-			<div class="row">
-				<div class="col col-md-10">
+			<div class="row copy-row-md">
+				<div class="col-sm col-md-10">
 					<div class="copy-wrap">
 						&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
 					</div> <!-- /copy-wrap -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col-4 -->
-		<div class="col col-md-4 footer-center footer-section">
+		<div class="col-sm col-md-4 footer-center footer-section">
 			<div class="row">
 				<div class="col text-center">
 					<h3 class="font-upper">Resources</h3>
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 			<div class="row">
-				<div class="col">
+				<div class="col-sm">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-menu1',
@@ -54,7 +54,7 @@
 					) );
 					?>
 				</div> <!-- /col -->
-				<div class="col">
+				<div class="col-sm">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-menu2',
@@ -64,7 +64,7 @@
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col-4 -->
-		<div class="col col-md-4 footer-right footer-section">
+		<div class="col-sm col-md-4 footer-right footer-section">
 			<div class="row">
 				<div class="col text-center">
 					<h3 class="font-upper">Social Presence</h3>
@@ -105,6 +105,13 @@
 					else : ?>
 						<p> <?php echo $design_credits; ?> </p>
 					<?php endif; ?>
+				</div> <!-- /col -->
+			</div> <!-- /row -->
+			<div class="row copy-row-sm">
+				<div class="col-sm col-md-10">
+					<div class="copy-wrap">
+						&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+					</div> <!-- /copy-wrap -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
 		</div> <!-- .col -->

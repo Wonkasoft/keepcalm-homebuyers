@@ -14,17 +14,17 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 <section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat; background-position: center center; background-size: cover;"></section>
 <section id="primary" class="container-fluid">
 		<div class="row arrow-message-row">
-			<div class="col col-md-4">
+			<div class="col-sm col-md-4">
 				<div>
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
 				</h1> <!-- .arrow-message -->
 			</div>
-			</div> <!-- .col -->
+			</div> <!-- .col-sm -->
 		</div> <!-- .row -->
 		<div class="row address-form-row">
-			<div class="col col-md-8">
+			<div class="col-sm col-md-8">
 				<form id="address-submit" action method="post">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
@@ -32,7 +32,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 						<input type="submit" name="submit_btn" value="Get Help Now!" />
 					</div>
 				</form>
-			</div> <!-- .col -->
+			</div> <!-- .col-sm -->
 		</div> <!-- .row -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
@@ -66,9 +66,9 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 ?>
 <section id="testimonials" class="container-fluid content-section" style="background-image: linear-gradient( rgba( 255, 255, 255, .7 ), rgba( 255, 255, 255, .7 )), url( '<?php echo $testimonial_image; ?>' ); background-blend-mode: screen; background-position: center top;background-size: cover;">
 	<div class="row justify-content-center">
-		<div class="col col-md-8 text-center">
+		<div class="col-sm col-md-8 text-center">
 			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
-		</div> <!-- /col -->
+		</div> <!-- /col-sm -->
 	</div> <!-- /row -->
 	<?php
 	$args = array(
@@ -83,11 +83,11 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		$link = get_the_permalink();
 		?>
 		<div class="row justify-content-center">
-			<div class="col col-md-4">
+			<div class="col-sm col-md-4">
 				<div class="testimonial-module" id="testimonial-module-<?php echo $counter; ?>">
-					<?php echo '<span class="name">'. $name . '</span> <span class="testimonial-quote">' . $excerpt . '</span>'; ?><a href="<?php echo $link; ?>"> ...Read more</a>
+					<?php echo '<span class="name">'. $name . '</span> <span class="testimonial-quote">' . $excerpt . '</span>'; ?><a href="<?php echo $link; ?>"> Read more...</a>
 				</div> <!-- /testimonial-module -->
-			</div> <!-- /col -->
+			</div> <!-- /col-sm -->
 		</div> <!-- /row -->
 		<?php
 		$counter++;
@@ -109,34 +109,34 @@ endif;
 			$grid_image_link = ( !get_theme_mod( 'grid_image_link_' . $i ) ) ? '' : get_the_permalink( get_theme_mod( 'grid_image_link_' . $i ) );
 			if ( $i == 1 || $i == 5 ) :
 				?>
-				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-sm col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
-							echo '<h2>'.$grid_image_title.'</h2>';
-						  echo '<p>'.$grid_image_decription.'</p>';
+							echo '<h2>' . $grid_image_title . '</h2>';
+						  echo '<p>' . $grid_image_decription . '</p>';
 						endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col -->
+				</div> <!-- .col-sm -->
 
 				<?php
 			else :
 				?>
-				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-sm col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
-							echo '<h2>'.$grid_image_title.'</h2>';
-						  echo '<p>'.$grid_image_decription.'</p>';
+							echo '<h2>' . $grid_image_title . '</h2>';
+						  echo '<p>' . $grid_image_decription . '</p>';
 						endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col -->
+				</div> <!-- .col-sm -->
 				<?php
 			endif;
 		endfor;
@@ -153,11 +153,11 @@ endif;
 ?>
 <section class="container-fluid contact-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
 	<div class="row">
-		<div class="col">
+		<div class="col-sm">
 			<div class="contact-form-wrap">
 				<?php echo do_shortcode( $contactform, true ); ?>
 			</div>
-		</div> <!-- .col -->
+		</div> <!-- .col-sm -->
 	</div> <!-- .row -->
 </section> <!-- .container-fluid content-section -->
 <?php 
