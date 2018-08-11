@@ -53,8 +53,10 @@
 				'</span>'
 			);
 
-				the_post_navigation();
 			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<?php endif;
+		the_post_navigation();
+
+	 ?>
 </article><!-- #post-<?php the_ID(); ?> -->
