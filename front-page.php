@@ -13,15 +13,17 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 ?>
 <section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
 <section id="primary" class="container-fluid">
-		<div class="row justify-content-center">
+		<div class="row arrow-message-row">
 			<div class="col col-md-4">
+				<div>
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
 				</h1> <!-- .arrow-message -->
+			</div>
 			</div> <!-- .col -->
 		</div> <!-- .row -->
-		<div class="row justify-content-center">
+		<div class="row address-form-row">
 			<div class="col col-md-8">
 				<form id="address-submit" action method="post">
 					<div class="form-fields-wrap">
@@ -34,13 +36,13 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- .row -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
-	<div class="row">
+	<div class="row problem-title-row">
 		<div class="col text-center">
 			<h1 class="problem-section-title">Do you have a problem house?</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
-	<div class="row justify-content-center">
-		<div class="col col-md-6 text-center">
+	<div class="row problem-content-row">
+		<div class="col col-md-6">
 			<p class="problem-content"><span>keep calm home buyers</span> can purchase your home fast to help in situations such 
 				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
 				hassle-free sale of your home. Let us help you!

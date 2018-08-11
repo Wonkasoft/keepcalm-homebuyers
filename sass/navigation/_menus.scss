@@ -2,11 +2,12 @@
 	clear: both;
 	display: block;
 	width: 100%;
+	position: absolute;
+	background: rgba( #000, .9 );
 
 	button {
 		position: absolute;
-		top: -1.2rem;
-    	margin-top: -2.2rem;
+		bottom: 100%;
 		height: 2.2rem;
 		background: transparent;
 		border: none;
@@ -16,23 +17,20 @@
 			position: relative;
 			display: block;
 			width: 26px;
-			height: 4px;
+			height: 3px;
 			margin: 5px 0;
+			left: 0;
 			opacity: 1;
 			background: #FCFC0D;
 			border-radius: 2px;
 			@include prefix( transition, all 0.2s ease-in-out, webkit moz o);
 			
 			&-top {
-				border-radius: 60% 60% 1px 1px;
-				height: 9px;
 				top: 0;
 			}
 			
 			&-bottom {
 				bottom: 0;
-				height: 5px;
-				border-radius: 1px 1px 20% 20%;
 			}
 		}
 
@@ -45,6 +43,7 @@
 
 			.hang-a-bur-mid {
 				opacity: 0;
+				left: -100%;
 			}
 
 			.hang-a-bur-bottom {
@@ -66,7 +65,6 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -105,8 +103,12 @@
 	}
 
 	li {
-		float: left;
+		float: none;
 		position: relative;
+
+		&:not(:first-child) {
+			border-top: 1px solid #fff;
+		}
 
 		&:hover > a,
 		&.focus > a {
@@ -114,6 +116,7 @@
 	}
 
 	a {
+		padding: 8px;
 		display: block;
 		text-decoration: none;
 	}
@@ -125,16 +128,36 @@
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.main-navigation.toggled {
+	border: 1px solid #fff;
+	ul {
+		display: block;
+	}
 }
+
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
-		display: flex;
+	.main-navigation {
+		position: relative; 
+		background: transparent;
+
+		&.toggled ul {
+			display: flex;
+		}
+
+		ul {
+			display: flex;
+
+			li {
+
+				&:not( :first-child ) {
+					border: none;
+				}
+			}
+		}
 	}
 }
 
@@ -142,7 +165,7 @@
 .posts-navigation,
 .post-navigation {
 
-	.site-main & {
+	.site-main {
 		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
