@@ -20,6 +20,7 @@
 					<?php 
 					$footer_logo =  ( ! get_theme_mod( 'footer_logo' ) ) ? '' : get_theme_mod( 'footer_logo' );
 					$copyright = ( ! get_theme_mod( 'copyright' ) ) ? '' : get_theme_mod( 'copyright' );
+					$disclosure_copy = ( ! get_theme_mod( 'disclosure_copy' ) ) ? '' : get_theme_mod( 'disclosure_copy' );
 					if ( $footer_logo == '' ) :
 
 					else :
@@ -34,7 +35,7 @@
 			<div class="row copy-row-md">
 				<div class="col-sm col-md-10">
 					<div class="copy-wrap">
-						&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+						<?php echo wp_sprintf( "%s <br /> &copy; " . date( 'Y' ) . " %s", $disclosure_copy, $copyright ); ?>
 					</div> <!-- /copy-wrap -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
@@ -110,7 +111,7 @@
 			<div class="row copy-row-sm">
 				<div class="col-sm col-md-10">
 					<div class="copy-wrap">
-						&copy; <?php echo date( 'Y' ).' '; echo $copyright; ?>
+						<?php echo wp_sprintf( "%s <br /> &copy; " . date( 'Y' ) . " %s", $disclosure_copy, $copyright ); ?>
 					</div> <!-- /copy-wrap -->
 				</div> <!-- /col -->
 			</div> <!-- /row -->
