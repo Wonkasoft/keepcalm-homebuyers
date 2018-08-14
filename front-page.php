@@ -25,7 +25,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- .row -->
 		<div class="row address-form-row">
 			<div class="col-sm col-md-8">
-				<form id="address-submit" action method="post">
+				<form id="address-submit" action="/get-help/" method="get">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
 						<input id="autocomplete" onFocus="geolocate()" type="address" size="35" name="address" placeholder="Enter your address..." />
