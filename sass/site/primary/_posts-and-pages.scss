@@ -91,7 +91,7 @@
 		@include prefix( transition, all .3s ease-in-out, webkit moz o );
 
 		@include media-breakpoint-up( md ) {
-			max-width: 60%;
+			max-width: 80%;
 			float: right;
 		}
 	}
@@ -758,6 +758,7 @@
 
 	ul {
 		list-style: none;
+		margin: 0;
 	}
 
 	li {
@@ -770,11 +771,13 @@
 
 		.copy-wrap {
 			padding: 15px;
+			@include font-size(.85);
 		}
 		small {
 			padding: 15px 0;
 		    display: inline-block;
 			line-height: 1.1;
+			font-style: italic;
 		}
 	}
 
@@ -789,7 +792,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
+		@include font-size(3);
 		margin: 35px 25px 0;
 		padding: 0;
 		width: 75px;

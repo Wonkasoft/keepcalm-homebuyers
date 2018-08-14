@@ -26,7 +26,7 @@
 
 		<header id="masthead" class="container-fluid site-header">
 			<div class="row">
-				<div class="col col-md-3">
+				<div class="col-md col-md-3">
 					<div class="custom-logo">
 						<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -48,7 +48,7 @@
 				<?php endif; ?>
 			</div> <!-- .custom-logo -->
 			</div> <!-- .col-5 -->
-			<div class="col col-md-8">
+			<div class="col-md col-md-8">
 				<div class="row">
 					<div class="col text-right">
 						<nav class="account-row">

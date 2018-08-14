@@ -156,7 +156,7 @@
 }
 
 
-@media screen and (min-width: 37.5em) {
+@include media-breakpoint-up( md ) {
 	.menu-toggle {
 		display: none;
 	}
@@ -164,8 +164,12 @@
 		position: relative; 
 		background: transparent;
 
-		&.toggled ul {
-			display: flex;
+		&.toggled  {
+			border: none;
+
+			ul {
+				display: flex;
+			}
 		}
 
 		ul {
