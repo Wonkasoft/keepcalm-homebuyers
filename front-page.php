@@ -28,7 +28,13 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 				<form id="address-submit" action="/get-help/" method="get">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
-						<input id="autocomplete" onFocus="geolocate()" type="address" size="35" name="address" placeholder="Enter your address..." />
+						<input id="autocomplete" onFocus="geolocate()" type="address" size="35" name="address-string" placeholder="Enter your address..." />
+						<input type="hidden" name="street_number" id="street_number" value="" />
+						<input type="hidden" name="route" id="route" value="" />
+						<input type="hidden" name="locality" id="locality" value="" />
+						<input type="hidden" name="administrative_area_level_1" id="administrative_area_level_1" value="" />
+						<input type="hidden" name="country" id="country" value="" />
+						<input type="hidden" name="postal_code" id="postal_code" value="" />
 						<input type="submit" name="submit_btn" value="Get Help Now!" />
 					</div>
 				</form>
