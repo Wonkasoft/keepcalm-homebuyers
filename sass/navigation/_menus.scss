@@ -104,6 +104,7 @@
 	li {
 		float: none;
 		position: relative;
+		white-space: nowrap;
 
 		&:not(:first-child) {
 			border-top: 1px solid #fff;

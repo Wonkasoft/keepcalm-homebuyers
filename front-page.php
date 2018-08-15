@@ -109,7 +109,7 @@ endif;
 			$grid_image_link = ( !get_theme_mod( 'grid_image_link_' . $i ) ) ? '' : get_the_permalink( get_theme_mod( 'grid_image_link_' . $i ) );
 			if ( $i == 1 || $i == 5 ) :
 				?>
-				<div class="col-sm col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-md col-lg-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
@@ -120,12 +120,12 @@ endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col-sm -->
+				</div> <!-- .col-md -->
 
 				<?php
 			else :
 				?>
-				<div class="col-sm col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-md col-lg-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
@@ -136,7 +136,7 @@ endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col-sm -->
+				</div> <!-- .col-md -->
 				<?php
 			endif;
 		endfor;
