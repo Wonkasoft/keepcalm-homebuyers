@@ -10,9 +10,11 @@
 get_header();
 ?>
 
-	<div id="primary" class="container content-area">
-		<main id="main" class="row site-main">
-
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main container-fluid">
+			<?php $blog_bg_image = get_template_directory_uri() . '/assets/img/default-subpage-header-image.jpg'; ?>
+			<div class="row" style="background: url('<?php echo $blog_bg_image; ?>') no-repeat;background-position: center center;background-size: cover;">
+				<div class="col col-md-6 content-panel text-center">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -28,7 +30,8 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+				</div> <!-- /content-panel -->
+			</div> <!-- /row -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
