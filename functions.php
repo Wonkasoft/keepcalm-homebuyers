@@ -193,6 +193,12 @@ if ( class_exists( 'WooCommerce' ) ) {
    
 /**
  * Register Testimonial Post Type
- * @since 1.0.0 [<init>]
+ * @since 1.0.0
  */
 require get_template_directory() . '/inc/register-testimonials.php';
+
+/**
+ * fixing body classes for each post
+ * @since 1.0.0
+ */
+require get_template_directory() . '/inc/wonkasoft-custom-functions.php';
