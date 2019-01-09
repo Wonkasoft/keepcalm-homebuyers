@@ -56,7 +56,6 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif;
-		the_post_navigation();
 
 	 ?>
 </article><!-- #post-<?php the_ID(); ?> -->

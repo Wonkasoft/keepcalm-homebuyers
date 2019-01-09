@@ -23,6 +23,7 @@ $featured_image = ( ! get_the_post_thumbnail_url() ) ? get_template_directory_ur
 			<?php
 			get_template_part( 'template-parts/content', get_post_type() );
 			?>
+			<?php the_post_navigation(); ?>
 			</div>  <!-- .col-lg-6 text-center -->
 			</div> <!-- /.row -->
 			<?php

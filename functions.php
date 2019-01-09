@@ -149,7 +149,10 @@ function keepcalm_homebuyers_scripts() {
 
 	wp_enqueue_script( 'keepcalm-homebuyers-js', str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/assets/js/keepcalm-homebuyers.min.js' ), array(), 'all', true );
 
-	wp_enqueue_script( 'googleapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDsc039BlVZZfUB5eD1NCR9SJkhhBOw-mU&libraries=places&callback=initAutocomplete', array( 'keepcalm-homebuyers-js' ), null, true );
+	if ( is_home() || is_front_page() ) :
+		wp_enqueue_script( 'googleapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDsc039BlVZZfUB5eD1NCR9SJkhhBOw-mU&libraries=places&callback=initAutocomplete', array( 'keepcalm-homebuyers-js' ), null, true );
+	endif;
+
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
