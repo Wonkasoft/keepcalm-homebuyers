@@ -1,5 +1,7 @@
 npm-shrinkwrap.json
 package-lock.json
+package.json
+gulpfile.js
 .DS_Store
 .phpintel
 phpcs.phar
