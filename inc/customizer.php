@@ -338,6 +338,31 @@ function keepcalm_homebuyers_customize_register( $wp_customize ) {
 	) );
 
 	/**
+	 * Footer disclosure settings
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting( 'disclosure_copy', array(
+		'default'	=> '',
+		'transport'	=> 'refresh'
+	) );
+
+	/**
+	 * Footer disclosure Controller
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'disclosure_copy_control',
+		array(
+		    'label' 		=> __( 'Disclosure Text', 'keepcalm-homebuyers' ), 
+			'section'		=> 'footer_section', 
+			'settings'		=> 'disclosure_copy', 
+			'type'			=> 'text',
+			'description'	=> __( 'Input Disclosure Information', 'keepcalm-homebuyers' )
+		)
+	) );
+
+	/**
 	 * Footer copyright settings
 	 * @since 1.0.0
 	 */

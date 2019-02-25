@@ -11,36 +11,44 @@ get_header();
 
 $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() . '/assets/img/default-header-image.jpg': get_theme_mod( 'main_image' );
 ?>
-<section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat;background-position: center center;background-size: cover;"></section>
+<section id="backdrop" class="container-fluid" style="background: url('<?php echo $main_image; ?>') no-repeat; background-position: center center; background-size: cover;"></section>
 <section id="primary" class="container-fluid">
-		<div class="row justify-content-center">
-			<div class="col col-md-4">
+		<div class="row arrow-message-row">
+			<div class="col-sm col-md-8 col-lg-4">
+				<div>
 				<h1 class="arrow-message">
 					<span class="top-row-message"><span class="keep-word">Keep</span><span class="upper-message calm-word"> Calm</span>
 					we can help</span><span class="bottom-row-message">buy your house <span class="upper-message">fast</span></span>
 				</h1> <!-- .arrow-message -->
-			</div> <!-- .col -->
+			</div>
+			</div> <!-- .col-sm -->
 		</div> <!-- .row -->
-		<div class="row justify-content-center">
-			<div class="col col-md-8">
-				<form id="address-submit" action method="post">
+		<div class="row address-form-row">
+			<div class="col-sm col-md-10 col-lg-8">
+				<form id="address-submit" action="/get-help/" method="get">
 					<div class="form-fields-wrap">
 						<span class="marker-wrap"><i class="fa fa-map-marker"></i></span>
-						<input id="autocomplete" onFocus="geolocate()" type="address" size="35" name="address" placeholder="Enter your address..." />
+						<input id="autocomplete" onFocus="geolocate()" type="address" size="35" name="address-string" placeholder="Enter your address..." />
+						<input type="hidden" name="street_number" id="street_number" value="" />
+						<input type="hidden" name="route" id="route" value="" />
+						<input type="hidden" name="locality" id="locality" value="" />
+						<input type="hidden" name="administrative_area_level_1" id="administrative_area_level_1" value="" />
+						<input type="hidden" name="country" id="country" value="" />
+						<input type="hidden" name="postal_code" id="postal_code" value="" />
 						<input type="submit" name="submit_btn" value="Get Help Now!" />
 					</div>
 				</form>
-			</div> <!-- .col -->
+			</div> <!-- .col-sm -->
 		</div> <!-- .row -->
 </section><!-- #primary -->
 <section class="container-fluid content-section">
-	<div class="row">
+	<div class="row problem-title-row">
 		<div class="col text-center">
 			<h1 class="problem-section-title">Do you have a problem house?</h1>
 		</div> <!-- /col -->
 	</div> <!-- /row -->
-	<div class="row justify-content-center">
-		<div class="col col-md-6 text-center">
+	<div class="row problem-content-row">
+		<div class="col col-lg-6">
 			<p class="problem-content"><span>keep calm home buyers</span> can purchase your home fast to help in situations such 
 				back taxes, divorce, vacancies, bad tenants, relocation, foreclosure,probate or just looking for
 				hassle-free sale of your home. Let us help you!
@@ -48,7 +56,7 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		</div> <!-- /col -->
 	</div> <!-- /row -->
 	<div class="row justify-content-center">
-		<div class="col col-md-6 text-center">
+		<div class="col text-center">
 			<div class="referral-wrap">
 			<i class="yellow-circle"><img src="<?php echo get_theme_file_uri( '/assets/img/blue-knot.png' ); ?>" /></i><span class="referral-content">*Do not forget, we pay for referrals!
 			</span>
@@ -64,9 +72,9 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 ?>
 <section id="testimonials" class="container-fluid content-section" style="background-image: linear-gradient( rgba( 255, 255, 255, .7 ), rgba( 255, 255, 255, .7 )), url( '<?php echo $testimonial_image; ?>' ); background-blend-mode: screen; background-position: center top;background-size: cover;">
 	<div class="row justify-content-center">
-		<div class="col col-md-8 text-center">
+		<div class="col-sm col-md-10 text-center">
 			<h1 class="testimonial-section-title"><span class="keep-word">Keep</span><span class="calm-word"> calm</span> Testimonials</h1>
-		</div> <!-- /col -->
+		</div> <!-- /col-sm -->
 	</div> <!-- /row -->
 	<?php
 	$args = array(
@@ -81,11 +89,11 @@ $main_image = ( !get_theme_mod( 'main_image' ) ) ? get_template_directory_uri() 
 		$link = get_the_permalink();
 		?>
 		<div class="row justify-content-center">
-			<div class="col col-md-4">
+			<div class="col-sm col-md-5">
 				<div class="testimonial-module" id="testimonial-module-<?php echo $counter; ?>">
-					<?php echo '<span class="name">'. $name . '</span> <span class="testimonial-quote">' . $excerpt . '</span>'; ?><a href="<?php echo $link; ?>"> ...Read more</a>
+					<?php echo '<span class="name">'. $name . '</span> <span class="testimonial-quote">' . $excerpt . '</span>'; ?><a href="<?php echo $link; ?>"> Read more...</a>
 				</div> <!-- /testimonial-module -->
-			</div> <!-- /col -->
+			</div> <!-- /col-sm -->
 		</div> <!-- /row -->
 		<?php
 		$counter++;
@@ -107,34 +115,34 @@ endif;
 			$grid_image_link = ( !get_theme_mod( 'grid_image_link_' . $i ) ) ? '' : get_the_permalink( get_theme_mod( 'grid_image_link_' . $i ) );
 			if ( $i == 1 || $i == 5 ) :
 				?>
-				<div class="col col-md-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-md col-md-4 col-lg-6 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
-							echo '<h2>'.$grid_image_title.'</h2>';
-						  echo '<p>'.$grid_image_decription.'</p>';
+							echo '<h2>' . $grid_image_title . '</h2>';
+						  echo '<p>' . $grid_image_decription . '</p>';
 						endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col -->
+				</div> <!-- .col-md -->
 
 				<?php
 			else :
 				?>
-				<div class="col col-md-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
+				<div class="col-md col-md-4 col-lg-3 masonary-grid-img photo-masonary-grid-<?php echo $i ?>" style="background: url(<?php echo $grid_image; ?>);background-position: center center;background-size: cover;">
 					<div class="text-wrap">
 						<a class="tile-link" href="<?php echo $grid_image_link; ?>">
 						<?php
 							if ( $grid_image_title != '' ) :
-							echo '<h2>'.$grid_image_title.'</h2>';
-						  echo '<p>'.$grid_image_decription.'</p>';
+							echo '<h2>' . $grid_image_title . '</h2>';
+						  echo '<p>' . $grid_image_decription . '</p>';
 						endif;
 						?>
 						</a> <!-- .tile-link -->
 					</div> <!-- .text-wrap -->
-				</div> <!-- .col -->
+				</div> <!-- .col-md -->
 				<?php
 			endif;
 		endfor;
@@ -151,11 +159,11 @@ endif;
 ?>
 <section class="container-fluid contact-section" style="background:url( '<?php echo $contact_bg_image; ?>' ) no-repeat;background-position: center top;background-size: cover;">
 	<div class="row">
-		<div class="col">
+		<div class="col-sm">
 			<div class="contact-form-wrap">
 				<?php echo do_shortcode( $contactform, true ); ?>
 			</div>
-		</div> <!-- .col -->
+		</div> <!-- .col-sm -->
 	</div> <!-- .row -->
 </section> <!-- .container-fluid content-section -->
 <?php 
